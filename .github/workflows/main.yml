@@ -21,6 +21,10 @@ jobs:
       # 生成静态文件
       - name: Build
         run: npm install && npm run build
+      
+      # 如果是发布到自定义域名
+      - name: AddDomain 
+        run: echo 'blog.yokefellow.com.cn' > CNAME
 
       # 部署到 GitHub Pages
       - name: Deploy
