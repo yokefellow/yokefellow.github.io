@@ -18,14 +18,12 @@ jobs:
         with:
           persist-credentials: false
 
-      # 获取Vssue在Repo设置的Secret（Client ID、Client Secret）
-      - name: VssueConfig
+      # 生成静态文件
+      - name: Build
+        # 获取Vssue在Repo设置的Secret（Client ID、Client Secret）
         env: 
           ClientID: ${{ secrets.VSSUE_CLIENT_ID }}
           ClientSecret: ${{ secrets.VSSUE_CLIENT_SECRET }}
-
-      # 生成静态文件
-      - name: Build
         run: npm install && npm run build
       
       # 如果是发布到自定义域名
