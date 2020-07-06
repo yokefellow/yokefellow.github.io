@@ -1,0 +1,21 @@
+{
+  "name": "yokefellow.github.io",
+  "version": "1.0.0",
+  "description": "Yokefellow's blog",
+  "main": "index.js",
+  "repository": "https://github.com/yokefellow/yokefellow.github.io",
+  "author": "Yokefellow",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "dependencies": {
+    "@vuepress/plugin-medium-zoom": "1.5.2",
+    "@vuepress/plugin-pwa": "1.5.2",
+    "vuepress": "1.4.0",
+    "vuepress-plugin-flowchart": "1.4.3",
+    "vuepress-theme-reco": "1.4.6"
+  }
+}
