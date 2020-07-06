@@ -34,8 +34,8 @@ module.exports = {
       platform: 'github',
       owner: 'yokefellow',
       repo: 'yokefellow.github.io',
-      clientId: 'f279bfadb36a00e24888',
-      clientSecret: '132b874efa1d475f43941c4bd0d6299d2e10218e',
+      clientId: process.env.ClientID,
+      clientSecret: process.env.ClientSecret,
     },
 
     /* 假定是 GitHub. 同时也可以是一个完整的 GitLab URL */
