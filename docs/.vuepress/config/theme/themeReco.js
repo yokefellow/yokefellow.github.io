@@ -12,11 +12,11 @@ module.exports = {
     blogConfig: {
         category: {
           location: 2,
-          text: 'Category' 
+          text: '目录' 
         },
         tag: {
           location: 3, 
-          text: 'Tag'
+          text: '标签'
         }
     },
 
@@ -40,7 +40,6 @@ module.exports = {
 
     /* 假定是 GitHub. 同时也可以是一个完整的 GitLab URL */
     repo: 'yokefellow/yokefellow.github.io',
-    repoLabel: '查看源码',
     /* 假如文档不是放在仓库的根目录下 */
     docsDir: 'docs',
     /* 假如文档放在一个特定的分支下 */
