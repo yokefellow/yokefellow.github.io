@@ -6,13 +6,19 @@ module.exports = {
   dest: 'dist',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
+    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
+    ['link', { rel: 'stylesheet', href:'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css'}],
+    ['script',{ 'data-ad-client': 'ca-pub-1130344085482597', async, src:'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'}],
   ],
   theme: 'reco',
   themeConfig,
  
   markdown: {
-    lineNumbers: true
+    lineNumbers: true,
+    extendMarkdown: md => {
+      /* 使用更多的 markdown-it 插件! */
+      md.use(require('markdown-it-katex'))
+    }
   },
   plugins: [
     '@vuepress/pwa', {
