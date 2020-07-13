@@ -8,7 +8,12 @@ module.exports = {
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
     ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css'}],
+    
+    /* Google AdSense */
     ['script',{ 'data-ad-client': 'ca-pub-1130344085482597', async: 'async', src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'}],
+    
+    /* 百度搜索资源平台HTML标签验证 */
+    ['meta', { name: 'baidu-site-verification', content: '7avnmfX31j' }],
   ],
   theme: 'reco',
   themeConfig,
@@ -30,5 +35,8 @@ module.exports = {
     },
     '@vuepress/medium-zoom', 
     'flowchart',
+    ['sitemap', {
+      hostname: 'https://yokefellow.github.io'
+    }],
   ] ,
 }  
