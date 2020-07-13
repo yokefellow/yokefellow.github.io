@@ -7,8 +7,8 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
-    ['link', { rel: 'stylesheet', href:'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css'}],
-    ['script',{ 'data-ad-client': 'ca-pub-1130344085482597', async, src:'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'}],
+    ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css'}],
+    ['script',{ 'data-ad-client': 'ca-pub-1130344085482597', async: 'async', src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'}],
   ],
   theme: 'reco',
   themeConfig,
