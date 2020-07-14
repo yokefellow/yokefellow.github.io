@@ -12,8 +12,12 @@ module.exports = {
     /* Google AdSense */
     ['script',{ 'data-ad-client': 'ca-pub-1130344085482597', async: 'async', src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'}],
     
+    /* Google Search Console */
+    ['meta', { name: 'google-site-verification', content: 'iSjPDbJMyZy56rE4_RXomTvvzBmPjaJIwKf5gtB8YlQ' }],
+    
     /* 百度搜索资源平台HTML标签验证 */
     ['meta', { name: 'baidu-site-verification', content: '7avnmfX31j' }],
+
   ],
   theme: 'reco',
   themeConfig,
