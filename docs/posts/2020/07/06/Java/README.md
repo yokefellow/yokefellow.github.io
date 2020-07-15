@@ -41,4 +41,6 @@ $$
 $$
 
 ## 3.图片
-![点击图片放大](/images/favicon-508x508.png)
+<img class='enable-zoom' src="/images/favicon-508x508.png" width='254' height='254' alt='头像'/>
+
+

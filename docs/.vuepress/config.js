@@ -60,17 +60,32 @@ module.exports = {
     }
   },
   plugins: [
-    '@vuepress/pwa', {
+    [
+      '@vuepress/pwa', 
+      {
         serviceWorker: true,
         updatePopup: {
           message: "发现新内容可用",
           buttonText: "刷新"
         }
-    },
-    '@vuepress/medium-zoom', 
+      },
+    ],
+
+    /* https://github.com/francoischalifour/medium-zoom */
+    [
+      '@vuepress/medium-zoom',
+      {
+        selector: 'img.enable-zoom',
+        options: {
+          margin: 16
+        }
+      }
+    ],
     'flowchart',
-    ['sitemap', {
-      hostname: 'https://yokefellow.github.io'
-    }],
+    ['sitemap', 
+      {
+        hostname: 'https://yokefellow.github.io'
+      }
+    ],
   ] ,
 }  
