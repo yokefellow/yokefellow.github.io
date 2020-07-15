@@ -24,8 +24,7 @@ jobs:
         env: 
           ClientID: ${{ secrets.VSSUE_CLIENT_ID }}
           ClientSecret: ${{ secrets.VSSUE_CLIENT_SECRET }}
-        run: |
-          rm dist && npm install && npm run build
+        run: npm install && npm run build
       
       # 如果是发布到自定义域名
       # - name: AddDomain 
