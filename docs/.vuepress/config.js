@@ -16,7 +16,8 @@ module.exports = {
     ['link', { rel: 'icon', type:'image/x-icon', sizes:'96x96', href: '/images/favicon-96x96.ico' }],
     ['link', { rel: 'icon', type:'image/x-icon', sizes:'128x128', href: '/images/favicon-128x128.ico' }],
     
-     /* Apple */
+    /* PWA */
+    /* iOS(Safari) */
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['link', { rel: 'apple-touch-icon', sizes:'57x57', href: '/images/apple-icon-57x57.png' }],
@@ -28,17 +29,16 @@ module.exports = {
     ['link', { rel: 'apple-touch-icon', sizes:'144x144', href: '/images/apple-icon-144x144.png' }],
     ['link', { rel: 'apple-touch-icon', sizes:'152x152', href: '/images/apple-icon-152x152.png' }],
     ['link', { rel: 'apple-touch-icon', sizes:'180x180', href: '/images/apple-icon-180x180.png' }],
-  
     /* Android */
     ['link', { rel: 'icon', type:'image/png', sizes:'192x192', href: '/images/android-icon-192x192.png' }],
-
+    /* IE, Microsoft Edge */
     ['link', { rel: 'mask-icon', href: '/images/favicon.svg', color: '#42b983' }],
     ['meta', { name: 'msapplication-TileImage', content: '/images/favicon-508x508.png' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
 
     /* KaTex CSS */
     ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css'}],
-    
+
     /* Google AdSense */
     ['script',{ 'data-ad-client': 'ca-pub-1130344085482597', async: 'async', src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'}],
     
@@ -74,35 +74,3 @@ module.exports = {
     }],
   ] ,
 }  
-
-
-// {
-//   "src": "/images/favicon-16x16.ico",
-//   "sizes": "16x16",
-//   "type": "image/x-icon"
-// },
-// {
-//   "src": "/images/favicon-32x32.ico",
-//   "sizes": "32x32",
-//   "type": "image/x-icon"
-// },
-// {
-//   "src": "/images/favicon-48x48.ico",
-//   "sizes": "48x48",
-//   "type": "image/x-icon"
-// },
-// {
-//   "src": "/images/favicon-64x64.ico",
-//   "sizes": "64x64",
-//   "type": "image/x-icon"
-// },
-// {
-//   "src": "/images/favicon-96x96.ico",
-//   "sizes": "96x96",
-//   "type": "image/x-icon"
-// },
-// {
-//   "src": "/images/favicon-128x128.ico",
-//   "sizes": "128x128",
-//   "type": "image/x-icon"
-// },
