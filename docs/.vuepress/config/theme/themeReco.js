@@ -1,8 +1,8 @@
 module.exports = {
     type: 'blog',
     author: 'Yokefellow',
-    authorAvatar: '/avatar.png',
-    logo: '/avatar.png',
+    authorAvatar: '/images/avatar.png',
+    logo: '/images/avatar.png',
 
     /* 搜索设置 */
     search: true,
@@ -50,7 +50,7 @@ module.exports = {
     /* 最后更新时间 */
     lastUpdated: 'Last Updated',
 
-    mode: 'light',
-    codeTheme: 'tomorrow',
-
+    /* auto 跟随系统，dark 暗色模式，light 亮色模式 */
+    mode: 'auto',
+    codeTheme: 'tomorrow'
 }

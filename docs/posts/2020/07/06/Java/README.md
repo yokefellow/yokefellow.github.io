@@ -39,3 +39,6 @@ $$
 2 \cos \frac{\alpha + \beta}{2}
 \sin \frac{\alpha - \beta}{2} 
 $$
+
+## 3.图片
+![点击图片放大](/images/favicon-508x508.png)
