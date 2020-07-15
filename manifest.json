@@ -1,0 +1,17 @@
+{
+    "lang": "zh-CN",
+    "name": "Yokefellow",
+    "description": "Yokefellow | 风中尘埃的博客",
+    "short_name": "Yokefellow",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#fff",
+    "theme_color": "#42b983",
+    "icons": [
+        {
+            "src": "/images/android-icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}
