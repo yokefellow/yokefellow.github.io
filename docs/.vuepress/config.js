@@ -74,3 +74,35 @@ module.exports = {
     }],
   ] ,
 }  
+
+
+// {
+//   "src": "/images/favicon-16x16.ico",
+//   "sizes": "16x16",
+//   "type": "image/x-icon"
+// },
+// {
+//   "src": "/images/favicon-32x32.ico",
+//   "sizes": "32x32",
+//   "type": "image/x-icon"
+// },
+// {
+//   "src": "/images/favicon-48x48.ico",
+//   "sizes": "48x48",
+//   "type": "image/x-icon"
+// },
+// {
+//   "src": "/images/favicon-64x64.ico",
+//   "sizes": "64x64",
+//   "type": "image/x-icon"
+// },
+// {
+//   "src": "/images/favicon-96x96.ico",
+//   "sizes": "96x96",
+//   "type": "image/x-icon"
+// },
+// {
+//   "src": "/images/favicon-128x128.ico",
+//   "sizes": "128x128",
+//   "type": "image/x-icon"
+// },
