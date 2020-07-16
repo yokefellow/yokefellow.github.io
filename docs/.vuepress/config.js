@@ -75,13 +75,16 @@ module.exports = {
     [
       '@vuepress/medium-zoom',
       {
-        selector: 'img.enable-zoom',
+        selector: '.theme-reco-content img',
         options: {
           margin: 16
         }
       }
     ],
+
+    /* https://github.com/ulivz/vuepress-plugin-flowchart */
     'flowchart',
+    '@vuepress/nprogress',
     ['sitemap', 
       {
         hostname: 'https://yokefellow.github.io'
