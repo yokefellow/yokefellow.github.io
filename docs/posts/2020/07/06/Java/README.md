@@ -13,7 +13,8 @@ tags:
 
 <!-- more -->
 
-# 1.流程图
+## 1.流程图
+
 @flowstart
 cond=>condition: Process?
 process=>operation: Process
@@ -23,7 +24,8 @@ cond(yes)->process->e
 cond(no)->e
 @flowend
 
-# 2.数学公式
+## 2.数学公式
+
 ### 2.1单行
 $x ={-b \pm \sqrt{b^2-4ac}\over 2a}$
 
@@ -41,6 +43,8 @@ $$
 $$
 
 ## 3.图片
+
 ![头像](/images/favicon-508x508.png)
 
+## 4.音乐播放器（APlayer）
 

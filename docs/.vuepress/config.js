@@ -8,6 +8,9 @@ module.exports = {
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'theme-color', content: '#42b983' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
+    
+    /* APlayer Custom */
+    ['link', { rel: 'stylesheet', href: '/css/aplayer-custom.css'}],
 
     ['link', { rel: 'icon', type:'image/x-icon', sizes:'16x16', href: '/images/favicon-16x16.ico' }],
     ['link', { rel: 'icon', type:'image/x-icon', sizes:'32x32', href: '/images/favicon-32x32.ico' }],
@@ -82,6 +85,26 @@ module.exports = {
       }
     ],
 
+    /* https://github.com/moefyit/vuepress-plugin-meting */
+    [
+      'meting',
+      {
+        meting: {
+          server: "netease",
+          type: "playlist",
+          mid: "3147691749",
+        },
+        /* https://aplayer.js.org/#/zh-Hans/ */
+        aplayer: {
+          fixed: true,
+          lrcType: 3,
+          theme: '#00BFFF',
+          order: 'random',
+          autoplay: true
+        },
+      }
+    ],
+    
     /* https://github.com/ulivz/vuepress-plugin-flowchart */
     'flowchart',
     '@vuepress/nprogress',
