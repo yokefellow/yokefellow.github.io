@@ -42,6 +42,11 @@ $x ={-b \pm \sqrt{b^2-4ac}\over 2a}$
 $\int \frac{1}{x}\mathrm{d}x= \ln \left| x \right| +C$
 
 ### 3.2多行
+
+$$
+C_0=1,C_{n}=\frac{2(2n+1)}{n+2}C_{n-1}
+$$
+
 $$
 P(E) ={n \choose k}p^k (1-p)^{n-k}
 $$
@@ -59,4 +64,5 @@ $$
 ## 5.音乐播放器（APlayer）
 
 <Meting server="netease" type="song" mid="405597568" :lrc-type="3"/>
+
 

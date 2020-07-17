@@ -39,8 +39,8 @@ module.exports = {
     ['meta', { name: 'msapplication-TileImage', content: '/images/favicon-508x508.png' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
 
-    /* KaTex CSS */
-    ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css'}],
+    /* KaTeX CSS CDN*/
+    ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css'}],
 
     /* Google AdSense */
     ['script',{ 'data-ad-client': 'ca-pub-1130344085482597', async: 'async', src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'}],
@@ -59,7 +59,8 @@ module.exports = {
     lineNumbers: true,
     extendMarkdown: md => {
       /* 使用更多的 markdown-it 插件! */
-      md.use(require('markdown-it-katex'))
+      /* https://github.com/iktakahiro/markdown-it-katex */
+      md.use(require('@iktakahiro/markdown-it-katex'))
     }
   },
   plugins: [
@@ -99,7 +100,7 @@ module.exports = {
           fixed: true,
           lrcType: 3,
           order: 'random',
-          autoplay: true
+          autoplay: false
         },
         mobile: {
           cover: false
