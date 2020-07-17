@@ -98,13 +98,27 @@ module.exports = {
         aplayer: {
           fixed: true,
           lrcType: 3,
-          theme: '#00BFFF',
           order: 'random',
           autoplay: true
         },
+        mobile: {
+          cover: false
+        }
       }
     ],
     
+    /* https://github.com/moefyit/vuepress-plugin-dynamic-title */
+    [
+      "dynamic-title",
+      {
+        // showIcon: "/favicon.ico",
+        showText: "(/≧▽≦/)咦！又好了！",
+        // hideIcon: "/failure.ico",
+        hideText: "(●—●)喔哟，崩溃啦！",
+        recoverTime: 2000
+      }
+    ],
+
     /* https://github.com/ulivz/vuepress-plugin-flowchart */
     'flowchart',
     '@vuepress/nprogress',

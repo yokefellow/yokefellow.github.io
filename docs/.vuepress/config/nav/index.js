@@ -10,7 +10,7 @@ module.exports = [
             { text: '掘金', link: 'https://juejin.im/', icon: 'reco-juejin' },
             { text: '知乎', link: 'https://www.zhihu.com/people/yokefellows', icon: 'reco-zhihu' },
             { text: '豆瓣', link: 'https://www.douban.com/people/191034217', icon: 'reco-douban' },
-            { text: '哔哩哔哩', link: 'https://space.bilibili.com/305911601', icon: 'reco-bilibili' },
+            { text: '哔哩哔哩', link: 'https://space.bilibili.com/305911601/dynamic', icon: 'reco-bilibili' },
         ]
     }
 ]

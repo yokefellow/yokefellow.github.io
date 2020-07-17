@@ -13,7 +13,17 @@ tags:
 
 <!-- more -->
 
-## 1.流程图
+## 1.HelloWorld
+
+```java {3}
+public class Main{
+    public static void main(String[] args){
+        System.out.println("HelloWorld");
+    }
+}
+```
+
+## 2.流程图
 
 @flowstart
 cond=>condition: Process?
@@ -24,14 +34,14 @@ cond(yes)->process->e
 cond(no)->e
 @flowend
 
-## 2.数学公式
+## 3.数学公式
 
-### 2.1单行
+### 3.1单行
 $x ={-b \pm \sqrt{b^2-4ac}\over 2a}$
 
 $\int \frac{1}{x}\mathrm{d}x= \ln \left| x \right| +C$
 
-### 2.2多行
+### 3.2多行
 $$
 P(E) ={n \choose k}p^k (1-p)^{n-k}
 $$
@@ -42,9 +52,11 @@ $$
 \sin \frac{\alpha - \beta}{2} 
 $$
 
-## 3.图片
+## 4.图片
 
 ![头像](/images/favicon-508x508.png)
 
-## 4.音乐播放器（APlayer）
+## 5.音乐播放器（APlayer）
+
+<Meting server="netease" type="song" mid="405597568" :lrc-type="3"/>
 

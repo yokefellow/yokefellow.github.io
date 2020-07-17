@@ -8,15 +8,7 @@ tags:
 ---
 
 
-## 1.HelloWorld
-
-```java
-public class Main{
-    public static void main(String[] args){
-        System.out.println("HelloWorld");
-    }
-}
-```
+## 1
 
 ### 1.1
 
@@ -27,8 +19,6 @@ XXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXX
 
 ## 2
-
-XXXXXXXXXXXXXXXXXXXXXXXXXX
 
 ### 2.1
 
