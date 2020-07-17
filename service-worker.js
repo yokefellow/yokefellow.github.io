@@ -27,11 +27,11 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "bf5e0a6e28b6231e8fc27d5590b412d9"
+    "revision": "3bf49d365ecf204466a257a9afedcc2c"
   },
   {
     "url": "about/index.html",
-    "revision": "32e25a406966499b4e6863b0158a0cc4"
+    "revision": "23d054a1782c8d363c656b36bc514285"
   },
   {
     "url": "assets/css/0.styles.dec98ccd.css",
@@ -126,8 +126,8 @@ self.__precacheManifest = [
     "revision": "2a1a59ab303e02561e07ab653de6d90c"
   },
   {
-    "url": "assets/js/app.f299853c.js",
-    "revision": "a7b89a04a96b04037d011f66cf5f755d"
+    "url": "assets/js/app.f6210397.js",
+    "revision": "7856ef3fc552c34040a106eec1b00280"
   },
   {
     "url": "assets/js/vendors~flowchart.59293ff2.js",
@@ -135,11 +135,11 @@ self.__precacheManifest = [
   },
   {
     "url": "categories/BackEnd/index.html",
-    "revision": "a7eaec87fc6a80929739c07722ee25a6"
+    "revision": "78f8bbc7d0bbc98c66d6240cb477b2c8"
   },
   {
     "url": "categories/index.html",
-    "revision": "d4312de89ae11b36b09ddd3250ecbfbf"
+    "revision": "e6b31b146c3fe7cff9c6823da36e7266"
   },
   {
     "url": "css/aplayer-custom.css",
@@ -211,59 +211,59 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "927b47ba9faf1de48e85635b4453262b"
+    "revision": "b5107922d0c2ddc93b33a58cbdfbb87d"
   },
   {
     "url": "online-tools/index.html",
-    "revision": "4707c065bb84059e344ca8dd1cec5a8b"
+    "revision": "346be59283cf71dee3177c4783e669cf"
   },
   {
     "url": "posts/2020/07/06/Java/advanced-1.html",
-    "revision": "f561040eadb417e01e34643afd480070"
+    "revision": "189e1a6d949d1106062ca47323a63c8e"
   },
   {
     "url": "posts/2020/07/06/Java/advanced-2.html",
-    "revision": "8f6757c5811592402572a08212838a2e"
+    "revision": "7e355395edbf2eadb0bcf6c3d99bc12b"
   },
   {
     "url": "posts/2020/07/06/Java/basic-1.html",
-    "revision": "ecde34ab4d11ae60618bbbcb5b770e07"
+    "revision": "ec40d709b81e48250ebbde88e8b71c08"
   },
   {
     "url": "posts/2020/07/06/Java/basic-2.html",
-    "revision": "2bf946453e50826a005dfcf9d303b0e4"
+    "revision": "1bc760d7b2665c68b03fa1b0cd2f6660"
   },
   {
     "url": "posts/2020/07/06/Java/index.html",
-    "revision": "59b121d309e44646c9d682afa70a4621"
+    "revision": "cdc1012ffafef658bac83997a6fe9fcd"
   },
   {
     "url": "posts/2020/07/06/JVM/JVM-1.html",
-    "revision": "5960cd5b2015bf83b532ef368f6df665"
+    "revision": "0af9c352a7f9acb7a0147e1343038dde"
   },
   {
     "url": "posts/2020/07/06/JVM/JVM-2.html",
-    "revision": "cd9d2d3729d1eec96ee5bfa9e7bdb5bb"
+    "revision": "c3e349d1dab3c73dad1bb12cc77b2d86"
   },
   {
     "url": "posts/index.html",
-    "revision": "f8b2939ff9cb376bf71df98aec02464c"
+    "revision": "37657d64ff11f8c5d93895a615877649"
   },
   {
     "url": "tag/index.html",
-    "revision": "f1481e89fe36ee0755c857ab2aff317e"
+    "revision": "6c06b7c9ce4766f7dfba67c4ac034d0a"
   },
   {
     "url": "tag/Java/index.html",
-    "revision": "3bd630d9e1f189e629809d7b75311a40"
+    "revision": "856dc5ba678c1ae72a9ea33ad974c7be"
   },
   {
     "url": "tag/JVM/index.html",
-    "revision": "27b4b8db62e1d4728e08bbe27ae97f93"
+    "revision": "511039426dcffa4b2aa7a08900a3bb80"
   },
   {
     "url": "timeline/index.html",
-    "revision": "41f3306641b87a8213aca793c87ab15f"
+    "revision": "6cfe835dc011d8de4cb438efb4e6c284"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
