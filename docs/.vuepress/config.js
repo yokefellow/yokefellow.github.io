@@ -128,5 +128,5 @@ module.exports = {
         hostname: 'https://yokefellow.github.io'
       }
     ],
-  ] ,
+  ]
 }  

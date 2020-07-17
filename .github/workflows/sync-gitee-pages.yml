@@ -4,7 +4,7 @@ name: Sync Gitee Pages
 on:
   push:
     branches: 
-      - master
+      - gh-pages-source
       
 jobs:
   sync-and-build:
