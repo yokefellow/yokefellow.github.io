@@ -22,7 +22,7 @@ jobs:
           destination-repo: "git@gitee.com:yokefellow/yokefellow.gitee.io.git"
     
     - name: Test
-        run: ls
+      run: ls
 
     - name: Build Gitee Pages
       uses: yanglbme/gitee-pages-action@master
