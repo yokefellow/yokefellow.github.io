@@ -2,8 +2,13 @@ const themeConfig = require('./config/theme/')
 
 module.exports = {
   title: "Yokefellow | 风中尘埃",
-  description: 'Tallk is cheap. Show me the code.——Linus Torvalds',
+  description: 'Talk is cheap. Show me the code.——Linus Torvalds',
   dest: 'dist',
+  locales: {
+    '/': {
+      lang: 'zh-CN'
+    }
+  },
   head: [
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'theme-color', content: '#42b983' }],
@@ -12,8 +17,8 @@ module.exports = {
     /* APlayer Custom */
     ['link', { rel: 'stylesheet', href: '/css/aplayer-custom.css'}],
 
+    ['link', { rel: 'icon', type:'image/x-icon', href: '/images/favicon.ico' }],
     ['link', { rel: 'icon', type:'image/x-icon', sizes:'16x16', href: '/images/favicon-16x16.ico' }],
-    ['link', { rel: 'icon', type:'image/x-icon', sizes:'32x32', href: '/images/favicon-32x32.ico' }],
     ['link', { rel: 'icon', type:'image/x-icon', sizes:'48x48', href: '/images/favicon-48x48.ico' }],
     ['link', { rel: 'icon', type:'image/x-icon', sizes:'64x64', href: '/images/favicon-64x64.ico' }],
     ['link', { rel: 'icon', type:'image/x-icon', sizes:'96x96', href: '/images/favicon-96x96.ico' }],
@@ -112,9 +117,7 @@ module.exports = {
     [
       "dynamic-title",
       {
-        // showIcon: "/favicon.ico",
         showText: "(/≧▽≦/)咦！又好了！",
-        // hideIcon: "/failure.ico",
         hideText: "(●—●)喔哟，崩溃啦！",
         recoverTime: 2000
       }

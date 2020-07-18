@@ -25,6 +25,8 @@ jobs:
         env: 
           ClientID: ${{ secrets.VSSUE_CLIENT_ID }}
           ClientSecret: ${{ secrets.VSSUE_CLIENT_SECRET }}
+          VssueGiteeClientID: ${{ secrets.VSSUE_GITEE_CLIENT_ID }}
+          VssueGiteeClientSecret: ${{ secrets.VSSUE_GITEE_CLIENT_SECRET }}
         run: npm install && npm run build
       
       # 如果是发布到自定义域名

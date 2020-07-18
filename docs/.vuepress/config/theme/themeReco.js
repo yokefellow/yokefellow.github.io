@@ -1,8 +1,24 @@
+const firstLevelDomainName = document.domain.split('.').slice(-2).join('.')
+
 module.exports = {
     type: 'blog',
     author: 'Yokefellow',
     authorAvatar: '/images/avatar.png',
     logo: '/images/avatar.png',
+
+    /* 修改默认语言配置 */
+    locales: {
+      '/': {
+        recoLocales: {
+          pagation: {
+            prev: '上一页',
+            next: '下一页',
+            go: '前往',
+            jump: '跳转至'
+          }
+        },
+      }
+    },
 
     /* 搜索设置 */
     search: true,
@@ -31,11 +47,11 @@ module.exports = {
 
     /* 评论插件(Vssue)设置 */
     vssueConfig: {
-      platform: 'github',
-      owner: 'yokefellow',
-      repo: 'yokefellow.github.io',
-      clientId: process.env.ClientID,
-      clientSecret: process.env.ClientSecret,
+      platform: `${firstLevelDomainName === 'github.io'? 'github':'gitee'}`,
+      owner: `${firstLevelDomainName === 'github.io'? 'yokefellow':'yokefellow'}`,
+      repo: `${firstLevelDomainName === 'github.io'? 'yokefellow.github.io':'yokefellow'}`,
+      clientId: `${firstLevelDomainName === 'github.io'? process.env.ClientID:process.env.VssueGiteeClientID}`,
+      clientSecret: `${firstLevelDomainName === 'github.io'? process.env.ClientSecret:process.env.VssueGiteeClientSecret}`,
     },
 
     /* 假定是 GitHub. 同时也可以是一个完整的 GitLab URL */
