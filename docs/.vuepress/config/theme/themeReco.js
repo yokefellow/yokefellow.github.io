@@ -1,4 +1,4 @@
-const firstLevelDomainName = document.domain.split('.').slice(-2).join('.')
+const firstLevelDomainName = `${document.domain.split('.').slice(-2).join('.')}`
 
 module.exports = {
     type: 'blog',
