@@ -95,6 +95,7 @@ jobs:
         with:
           # 替换为你的 Gitee 目标仓库地址
           gitee_repo: "git@gitee.com:yokefellow/yokefellow.git"
+          folder: 'dist'
 
       # 实现 Gitee Pages 的自动部署
       - name: Build Gitee Pages 🔧
@@ -102,7 +103,7 @@ jobs:
         with:
           # 替换为你的 Gitee 用户名
           gitee-username: yokefellow
-          # 在 Settings ->  Secrets 配置 GITEE_PASSWORD
+          # 在 Settings -> Secrets 配置 GITEE_PASSWORD
           gitee-password: ${{ secrets.GITEE_PASSWORD }}
           # 替换为你的 Gitee Repo
           gitee-repo: yokefellow
