@@ -32,7 +32,7 @@ jobs:
           ClientSecret: ${{ secrets.VSSUE_CLIENT_SECRET }}
 
           #Sitemap Config
-          SitemapHostname: 'https://yokefellow.github.io'
+          SitemapHostname: https://yokefellow.github.io
         run: |
           npm install 
           npm run build
@@ -42,7 +42,7 @@ jobs:
       #   run: cd dist && echo 'blog.yokefellow.com.cn' > CNAME
 
       # 部署到 GitHub Pages
-      - name: Deploy 🚀
+      - name: Deploy GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
@@ -55,16 +55,6 @@ jobs:
     needs: build-and-deploy
     runs-on: ubuntu-latest
     steps:
-      # - name: Sync Gitee Pages 🌀
-      #   uses: wearerequired/git-mirror-action@master
-      #   env:
-      #     # 注意在 Settings->Secrets 配置 GITEE_RSA_PRIVATE_KEY
-      #     SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
-      #   with:
-      #     # 注意替换为你的 GitHub 源仓库地址
-      #     source-repo: "git@github.com:yokefellow/yokefellow.github.io.git"
-      #     # 注意替换为你的 Gitee 目标仓库地址
-      #     destination-repo: " git@gitee.com:yokefellow/yokefellow.git"
       # 拉取代码
       - name: Checkout 🛎️
         uses: actions/checkout@v2
@@ -83,19 +73,29 @@ jobs:
           ClientSecret: ${{ secrets.VSSUE_GITEE_CLIENT_SECRET }}
           
           #Sitemap Config
-          SitemapHostname: 'https://yokefellow.gitee.io'
+          SitemapHostname: https://yokefellow.gitee.io
         run: |
           npm install 
           npm run build
 
       #如果是发布到自定义域名
-      - name: Add the domain 
-        run: |
-          cd dist 
-          echo 'blog.yokefellow.com.cn' > CNAME
+      # - name: Add the domain 
+      #   run: |
+      #     cd dist 
+      #     echo 'blog.yokefellow.com.cn' > CNAME
 
-      #将重新生成的代码同步到Gitee Pages上
+      # 同步到Gitee Pages
       - name: Sync Gitee Pages 🌀
+        uses: yokefellow/gitee-pages-deploy-action@master
+        env:
+          # 注意在 Settings->Secrets 配置 GITEE_RSA_PRIVATE_KEY
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+        with:
+          # 注意替换为你的 Gitee 目标仓库地址
+          gitee-repo: "git@gitee.com:yokefellow/yokefellow.git"
+
+      #实现 Gitee Pages 的自动部署
+      - name: Build Gitee Pages 🔧
         uses: yanglbme/gitee-pages-action@master
         with:
           # 注意替换为你的 Gitee 用户名
