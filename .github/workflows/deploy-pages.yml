@@ -11,7 +11,7 @@ on:
 jobs:
   build-and-deploy:
     name: Deploy GitHub Pages
-    # 服务器环境：最新版 Ubuntu
+    # 服务器环境： Ubuntu（最新版）
     runs-on: ubuntu-latest
     steps:
       # 拉取代码
