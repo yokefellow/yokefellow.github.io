@@ -128,7 +128,7 @@ module.exports = {
     '@vuepress/nprogress',
     ['sitemap', 
       {
-        hostname: process.env.Hostname
+        hostname: process.env.SitemapHostname
       }
     ]
   ]
