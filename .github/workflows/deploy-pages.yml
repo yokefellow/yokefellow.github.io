@@ -22,7 +22,7 @@ jobs:
 
       # 生成静态文件
       - name: Install and Build 🔧
-        # 获取Vssue在Repo设置的Secret（Client ID、Client Secret）
+        # 获取在Repo设置的Secret（Client ID、Client Secret）
         env: 
           # Vssue Config
           Platform: github
@@ -63,7 +63,7 @@ jobs:
 
       # 重新生成静态文件
       - name: Reinstall and Rebuild 🔧
-        # 获取Vssue在Repo设置的Secret（Client ID、Client Secret）
+        # 获取在Repo设置的Secret（Client ID、Client Secret）
         env: 
           # Vssue Config
           Platform: gitee
