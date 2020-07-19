@@ -45,9 +45,9 @@ module.exports = {
 
     /* 评论插件(Vssue)设置 */
     vssueConfig: {
-      platform:  'github',
-      owner: 'yokefellow',
-      repo: 'yokefellow.github.io',
+      platform: process.env.Platform,
+      owner: process.env.Owner,
+      repo: process.env.Repo,
       clientId:  process.env.ClientID,
       clientSecret: process.env.ClientSecret,
     },

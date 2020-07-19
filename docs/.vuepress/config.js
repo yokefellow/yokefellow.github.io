@@ -128,7 +128,7 @@ module.exports = {
     '@vuepress/nprogress',
     ['sitemap', 
       {
-        hostname: 'https://yokefellow.github.io'
+        hostname: process.env.Hostname
       }
     ]
   ]

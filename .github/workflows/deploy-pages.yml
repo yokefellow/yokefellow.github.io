@@ -24,10 +24,15 @@ jobs:
       - name: Install and Build 🔧
         # 获取Vssue在Repo设置的Secret（Client ID、Client Secret）
         env: 
+          # Vssue Config
+          Platform: github
+          Owner: yokefellow
+          Repo: yokefellow.github.io
           ClientID: ${{ secrets.VSSUE_CLIENT_ID }}
           ClientSecret: ${{ secrets.VSSUE_CLIENT_SECRET }}
-          VssueGiteeClientID: ${{ secrets.VSSUE_GITEE_CLIENT_ID }}
-          VssueGiteeClientSecret: ${{ secrets.VSSUE_GITEE_CLIENT_SECRET }}
+
+           #Sitemap Config
+          SitemapHost: https://yokefellow.github.io
         run: |
           npm install 
           npm run build
@@ -49,17 +54,38 @@ jobs:
     needs: build-and-deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Sync to Gitee Pages🌀
-        uses: wearerequired/git-mirror-action@master
-        env:
-          # 注意在 Settings->Secrets 配置 GITEE_RSA_PRIVATE_KEY
-          SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+      # - name: Sync Gitee Pages 🌀
+      #   uses: wearerequired/git-mirror-action@master
+      #   env:
+      #     # 注意在 Settings->Secrets 配置 GITEE_RSA_PRIVATE_KEY
+      #     SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+      #   with:
+      #     # 注意替换为你的 GitHub 源仓库地址
+      #     source-repo: "git@github.com:yokefellow/yokefellow.github.io.git"
+      #     # 注意替换为你的 Gitee 目标仓库地址
+      #     destination-repo: " git@gitee.com:yokefellow/yokefellow.git"
+      # 拉取代码
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
         with:
-          # 注意替换为你的 GitHub 源仓库地址
-          source-repo: "git@github.com:yokefellow/yokefellow.github.io.git"
-          # 注意替换为你的 Gitee 目标仓库地址
-          destination-repo: " git@gitee.com:yokefellow/yokefellow.git"
+          persist-credentials: false
 
+      # 重新生成静态文件
+      - name: Reinstall and Rebuild 🔧
+        # 获取Vssue在Repo设置的Secret（Client ID、Client Secret）
+        env: 
+          # Vssue Config
+          Platform: gitee
+          Owner: yokefellow
+          Repo: yokefellow
+          ClientID: ${{ secrets.VSSUE_GITEE_CLIENT_ID }}
+          ClientSecret: ${{ secrets.VSSUE_GITEE_CLIENT_SECRET }}
+          
+          #Sitemap Config
+          SitemapHost: https://yokefellow.gitee.io
+        run: |
+          npm install 
+          npm run build
       - name: Build Gitee Pages 🔧
         uses: yanglbme/gitee-pages-action@master
         with:
