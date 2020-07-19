@@ -17,7 +17,7 @@ module.exports = {
     /* APlayer Custom */
     ['link', { rel: 'stylesheet', href: '/css/aplayer-custom.css'}],
 
-    ['link', { rel: 'icon', type:'image/x-icon', href: '/images/favicon.ico' }],
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['link', { rel: 'icon', type:'image/x-icon', sizes:'16x16', href: '/images/favicon-16x16.ico' }],
     ['link', { rel: 'icon', type:'image/x-icon', sizes:'48x48', href: '/images/favicon-48x48.ico' }],
     ['link', { rel: 'icon', type:'image/x-icon', sizes:'64x64', href: '/images/favicon-64x64.ico' }],
@@ -130,6 +130,6 @@ module.exports = {
       {
         hostname: 'https://yokefellow.github.io'
       }
-    ],
+    ]
   ]
 }  

@@ -14,27 +14,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # 拉取代码
-      - name: Checkout
+      - name: Checkout 🛎️
         uses: actions/checkout@v2
         with:
           persist-credentials: false
 
       # 生成静态文件
-      - name: Build
+      - name: Install and Build 🔧
         # 获取Vssue在Repo设置的Secret（Client ID、Client Secret）
         env: 
           ClientID: ${{ secrets.VSSUE_CLIENT_ID }}
           ClientSecret: ${{ secrets.VSSUE_CLIENT_SECRET }}
           VssueGiteeClientID: ${{ secrets.VSSUE_GITEE_CLIENT_ID }}
           VssueGiteeClientSecret: ${{ secrets.VSSUE_GITEE_CLIENT_SECRET }}
-        run: npm install && npm run build
+        run: |
+          npm install 
+          npm run build
       
       # 如果是发布到自定义域名
       # - name: Add the domain 
       #   run: cd dist && echo 'blog.yokefellow.com.cn' > CNAME
 
       # 部署到 GitHub Pages
-      - name: Deploy
+      - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}

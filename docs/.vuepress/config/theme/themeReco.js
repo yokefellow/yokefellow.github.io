@@ -1,5 +1,3 @@
-const firstLevelDomainName = `${document.domain.split('.').slice(-2).join('.')}`
-
 module.exports = {
     type: 'blog',
     author: 'Yokefellow',
@@ -47,11 +45,11 @@ module.exports = {
 
     /* 评论插件(Vssue)设置 */
     vssueConfig: {
-      platform: `${firstLevelDomainName === 'github.io'? 'github':'gitee'}`,
-      owner: `${firstLevelDomainName === 'github.io'? 'yokefellow':'yokefellow'}`,
-      repo: `${firstLevelDomainName === 'github.io'? 'yokefellow.github.io':'yokefellow'}`,
-      clientId: `${firstLevelDomainName === 'github.io'? process.env.ClientID:process.env.VssueGiteeClientID}`,
-      clientSecret: `${firstLevelDomainName === 'github.io'? process.env.ClientSecret:process.env.VssueGiteeClientSecret}`,
+      platform:  'github',
+      owner: 'yokefellow',
+      repo: 'yokefellow.github.io',
+      clientId:  process.env.ClientID,
+      clientSecret: process.env.ClientSecret,
     },
 
     /* 假定是 GitHub. 同时也可以是一个完整的 GitLab URL */
@@ -64,7 +62,7 @@ module.exports = {
     editLinkText: '帮助我们改善此页面！',
     
     /* 最后更新时间 */
-    lastUpdated: 'Last Updated',
+    lastUpdated: '上次更新',
 
     /* auto 跟随系统，dark 暗色模式，light 亮色模式 */
     mode: 'auto',

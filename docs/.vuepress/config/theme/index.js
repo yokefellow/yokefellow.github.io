@@ -1,4 +1,4 @@
-const themeReco = require('./themeReco.js')
+const themeReco = require('./themeReco')
 const nav = require('../nav/')
 const sidebar = require('../sidebar/')
 

@@ -67,8 +67,4 @@ $$
 
 ## 6.评论区（Vssue）
 
-<Comments/>
-
-## 7.Test
-
-<Test/>
+<VssueDemo :title="$title" platform="gitee"/>
