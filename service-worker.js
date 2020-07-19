@@ -27,11 +27,11 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "59b1e83414962ab54e58691d9dcda69d"
+    "revision": "f89fa6409479cff9dadeca1194c35f12"
   },
   {
     "url": "about/index.html",
-    "revision": "ac61509ad5e7d9a7feff8b5934ca3b3c"
+    "revision": "daac5a72242155f20768d1950b62609f"
   },
   {
     "url": "assets/css/0.styles.3bac0953.css",
@@ -82,12 +82,12 @@ self.__precacheManifest = [
     "revision": "7ce984d1468868ef94ed89d87dcd27ce"
   },
   {
-    "url": "assets/js/19.eeae580d.js",
-    "revision": "31270ab40b68dbb65a12f961c3aa78ee"
+    "url": "assets/js/19.702fe545.js",
+    "revision": "747c26de3ad922198f17eee5e1265362"
   },
   {
-    "url": "assets/js/20.6b0f40c6.js",
-    "revision": "96cded69c7fda1b31473881cbebd3026"
+    "url": "assets/js/20.8a93dda2.js",
+    "revision": "4218a87abbcae851b7ff981131636cf6"
   },
   {
     "url": "assets/js/21.584dc697.js",
@@ -126,8 +126,8 @@ self.__precacheManifest = [
     "revision": "95e6df277eb79c38bda1235f5691cf68"
   },
   {
-    "url": "assets/js/app.b38a49be.js",
-    "revision": "c4575d8a5c54cbd19244dbd61e6d5744"
+    "url": "assets/js/app.85d49dcd.js",
+    "revision": "a84a9967fefa23d9a93e7db2a982586a"
   },
   {
     "url": "assets/js/vendors~flowchart.05fb136d.js",
@@ -135,11 +135,11 @@ self.__precacheManifest = [
   },
   {
     "url": "categories/BackEnd/index.html",
-    "revision": "925c19dd917376a43e2e3ea1b46b40af"
+    "revision": "b7e1fbfcfdec925553e47cc9f3226977"
   },
   {
     "url": "categories/index.html",
-    "revision": "2e39d1d0fcb27ee9cd8615b4fbc1a507"
+    "revision": "d3f9ab7d081aad708401d6566865bf95"
   },
   {
     "url": "css/aplayer-custom.css",
@@ -211,59 +211,59 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "6c6d72072371bd17454ed4597eb7b167"
+    "revision": "d56ee18224e27d66580a71b9c43fad67"
   },
   {
     "url": "online-tools/index.html",
-    "revision": "687e799b6b28d2bdf1d2235650f73ec5"
+    "revision": "20af5c160e1e6c69d31b22029186ed9a"
   },
   {
     "url": "posts/2020/07/06/Java/advanced-1.html",
-    "revision": "69dc54268c3316ae10963f57f8f7c331"
+    "revision": "aa37a92b03eadb3f3f665ab364270e87"
   },
   {
     "url": "posts/2020/07/06/Java/advanced-2.html",
-    "revision": "68f8a94576fc1f8f988192eb2c5f5e57"
+    "revision": "a94d6792f6770f5d172565868d247e3e"
   },
   {
     "url": "posts/2020/07/06/Java/basic-1.html",
-    "revision": "df94efcb11412f03d9ca7318ec78f184"
+    "revision": "63f9943ecb02cf56b2a5f44ee66fbbd3"
   },
   {
     "url": "posts/2020/07/06/Java/basic-2.html",
-    "revision": "773c3c2429734406d2880dd1ceae957a"
+    "revision": "e99d56751def1312cafa4a5f910096ee"
   },
   {
     "url": "posts/2020/07/06/Java/index.html",
-    "revision": "7514763fb8f6dd96f99e46520f3b2ed4"
+    "revision": "4931bdac36a4ae32df4559171d31a56d"
   },
   {
     "url": "posts/2020/07/06/JVM/JVM-1.html",
-    "revision": "d406702cb9046893e5f51ade315e19b8"
+    "revision": "3f0c69ea21e28f44e0bf6f8a0416d8bc"
   },
   {
     "url": "posts/2020/07/06/JVM/JVM-2.html",
-    "revision": "4e1c1239be3884843c987b40811371b0"
+    "revision": "762e1d1703d0c12ab31718cb8710e800"
   },
   {
     "url": "posts/index.html",
-    "revision": "1e94f854b0be3199b6030a3457ec8f7b"
+    "revision": "070d1b59bcfd921b2645e676d6918755"
   },
   {
     "url": "tag/index.html",
-    "revision": "676ef7da2b8390e1ec74d1a1d6dfad67"
+    "revision": "8ddf0d5e518c2cdcef915c628554e00e"
   },
   {
     "url": "tag/Java/index.html",
-    "revision": "65fcecb60b9d882612223c32fbf99a80"
+    "revision": "e74bb52405c2dd8e6c2ecaf5b1d2123b"
   },
   {
     "url": "tag/JVM/index.html",
-    "revision": "d52ab03c7c30a4ba0e542b51604daa1d"
+    "revision": "b9396124be8d105db51c2683be323770"
   },
   {
     "url": "timeline/index.html",
-    "revision": "f2831c2f738b1a44bfc2da5270697692"
+    "revision": "f5f643ad79eb2e9ad2fbdf562c88e732"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
