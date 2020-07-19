@@ -31,8 +31,8 @@ jobs:
           ClientID: ${{ secrets.VSSUE_CLIENT_ID }}
           ClientSecret: ${{ secrets.VSSUE_CLIENT_SECRET }}
 
-           #Sitemap Config
-          SitemapHost: https://yokefellow.github.io
+          #Sitemap Config
+          SitemapHostname: 'https://yokefellow.github.io'
         run: |
           npm install 
           npm run build
@@ -49,6 +49,7 @@ jobs:
           BRANCH: master
           FOLDER: dist
           CLEAN: true
+
   sync-and-build:
     name: Sync Gitee Pages
     needs: build-and-deploy
@@ -82,11 +83,19 @@ jobs:
           ClientSecret: ${{ secrets.VSSUE_GITEE_CLIENT_SECRET }}
           
           #Sitemap Config
-          SitemapHost: https://yokefellow.gitee.io
+          SitemapHostname: 'https://yokefellow.gitee.io'
         run: |
           npm install 
           npm run build
-      - name: Build Gitee Pages 🔧
+
+      #如果是发布到自定义域名
+      - name: Add the domain 
+        run: |
+          cd dist 
+          echo 'blog.yokefellow.com.cn' > CNAME
+
+      #将重新生成的代码同步到Gitee Pages上
+      - name: Sync Gitee Pages 🌀
         uses: yanglbme/gitee-pages-action@master
         with:
           # 注意替换为你的 Gitee 用户名
