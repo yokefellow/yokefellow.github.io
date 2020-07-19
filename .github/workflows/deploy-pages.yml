@@ -1,5 +1,5 @@
 # https://github.com/JamesIves/github-pages-deploy-action
-name: Deploy GitHub Pages
+name: Deploy Pages
 
 # 触发条件：在 push 到 gh-pages-source 分支后
 on:
@@ -10,6 +10,7 @@ on:
 # 任务
 jobs:
   build-and-deploy:
+    name: Deploy GitHub Pages
     # 服务器环境：最新版 Ubuntu
     runs-on: ubuntu-latest
     steps:
@@ -44,6 +45,8 @@ jobs:
           FOLDER: dist
           CLEAN: true
   sync-and-build:
+    name: Sync Gitee Pages
+    needs: build-and-deploy
     runs-on: ubuntu-latest
     steps:
       - name: Sync to Gitee Pages🌀
