@@ -98,6 +98,8 @@ jobs:
           folder: dist
           git_user_email: yuan1241900094@gmail.com
           git_user_name: yokefellow
+          source_github_remote_branch: gh-pages-source
+          source_gitee_remote_branch: gh-pages-source
 
       # 实现 Gitee Pages 的自动部署
       - name: Build Gitee Pages 🔧
