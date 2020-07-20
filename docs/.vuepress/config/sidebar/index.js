@@ -27,6 +27,22 @@ module.exports = {
         'intro-vuepress',
         'intro-vuepress-theme-reco',
       ]
+    },
+    {
+      title: '本地构建',
+      collapsable: true,
+      children: [
+        'local-build-1',
+        'local-build-2',
+      ]
+    },
+    {
+      title: '部署',
+      collapsable: true,
+      children: [
+        'deploy-1',
+        'deploy-2',
+      ]
     }
   ]
 }
