@@ -27,11 +27,11 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "f585616f543d7d31b0efdcce727d2b31"
+    "revision": "5db9a856ec8f01398a325623904a1a63"
   },
   {
     "url": "about/index.html",
-    "revision": "45a62cba3932831ef38732184640f162"
+    "revision": "811bf479888052061aaf7df4069c062d"
   },
   {
     "url": "assets/css/0.styles.f83879b5.css",
@@ -158,8 +158,8 @@ self.__precacheManifest = [
     "revision": "12495ff382a852b236dc5d3fb725e8b8"
   },
   {
-    "url": "assets/js/app.7a392e70.js",
-    "revision": "9c129d3997002b6c0259aa480e6731c8"
+    "url": "assets/js/app.ca60b49e.js",
+    "revision": "a572de523f72075eb25a6225db1a4ad9"
   },
   {
     "url": "assets/js/vendors~flowchart.c0c4bd14.js",
@@ -167,15 +167,15 @@ self.__precacheManifest = [
   },
   {
     "url": "categories/BackEnd/index.html",
-    "revision": "f2ebdb6381e61a1aeb16d56e6bda40f7"
+    "revision": "92ab7c76ae155b2133e5605e6ac7f450"
   },
   {
     "url": "categories/FrontEnd/index.html",
-    "revision": "1a19534ff8914ee8a4a7de848d980ae3"
+    "revision": "0399c6dd5506a17dd94e4a14182c0f05"
   },
   {
     "url": "categories/index.html",
-    "revision": "7fe7fdbcc55ad6ad5c3106c74a77bf14"
+    "revision": "266ef422441f6823fa22e48aa574d294"
   },
   {
     "url": "css/aplayer-custom.css",
@@ -251,107 +251,107 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "20c2b239d3413a08767c6dee5e8307a1"
+    "revision": "80695582107b043855ab18f6311a5c32"
   },
   {
     "url": "online-tools/index.html",
-    "revision": "39dd0e71a4dd89f68d437b5b554ece22"
+    "revision": "62b8f101abe59fae72c883d7e9efaa7c"
   },
   {
     "url": "posts/index.html",
-    "revision": "6e5bf104183646b274644721598dd5b7"
+    "revision": "64b9f0ac68e77434d66804cb92251e3a"
   },
   {
     "url": "posts/java-learning/advanced-1.html",
-    "revision": "6ea0d9ca762f344865e75cee45f2ba17"
+    "revision": "d778c333a53c088bfef93397706fa7e2"
   },
   {
     "url": "posts/java-learning/advanced-2.html",
-    "revision": "acdc39d92ae750110f156e68eb39cba3"
+    "revision": "37533a07da33fa3bd253c01227c28cf4"
   },
   {
     "url": "posts/java-learning/basic-1.html",
-    "revision": "9195e1c9bd433184712f7425ac8808a4"
+    "revision": "58fa118b63d0eef9232ec5e66315ff61"
   },
   {
     "url": "posts/java-learning/basic-2.html",
-    "revision": "26d2ab298481d7e56f869b0a4146cfb2"
+    "revision": "88671d111e025d52f56aafe462d0801f"
   },
   {
     "url": "posts/java-learning/index.html",
-    "revision": "fd66ebaf73576c909bc224f85a961bb4"
+    "revision": "bf5f94def16cf689268716893101b9b8"
   },
   {
     "url": "posts/jvm-learning/index.html",
-    "revision": "8d2531adfa141c4d51ba0607696623a6"
+    "revision": "89b844ad08002518399a37d04ca6650a"
   },
   {
     "url": "posts/jvm-learning/JVM-1.html",
-    "revision": "a2ec66f04a35958f6c8dade465a1af5c"
+    "revision": "140a67eeda3dbca7b84704183daac5be"
   },
   {
     "url": "posts/jvm-learning/JVM-2.html",
-    "revision": "51d14d0f4d9adcdc976c7d65985085e4"
+    "revision": "61f6226655d87976e09158f74f49166f"
   },
   {
     "url": "posts/vuepress-blog-build-journey/deploy-1.html",
-    "revision": "dd95b2729bdbecf0d87949b56bd73d3f"
+    "revision": "2689aaac55eb6df54ea6034cea0fad84"
   },
   {
     "url": "posts/vuepress-blog-build-journey/deploy-2.html",
-    "revision": "ef4bfab8e9f08d66d5322188b710a110"
+    "revision": "b9a11c42967ee92d0ec1548d77c33555"
   },
   {
     "url": "posts/vuepress-blog-build-journey/index.html",
-    "revision": "8b2c0ad2ebc964c3dc5539f0e4330961"
+    "revision": "062d2fe6ce3b703e10975e5099ab8c65"
   },
   {
     "url": "posts/vuepress-blog-build-journey/intro-vuepress-theme-reco.html",
-    "revision": "71896544f2fe02792e262555a2ee7f0c"
+    "revision": "adcf81d0285e9e736419a5b49d64c9bf"
   },
   {
     "url": "posts/vuepress-blog-build-journey/intro-vuepress.html",
-    "revision": "dee248200dd7582f94c9fa01c621c6eb"
+    "revision": "4f5c9cea0d048acfab59197d1df7e6c1"
   },
   {
     "url": "posts/vuepress-blog-build-journey/local-build-1.html",
-    "revision": "43492b4a1df42d96ea1c4142f29aad11"
+    "revision": "b9ddfe1d2f3068396d03cab862ff2e88"
   },
   {
     "url": "posts/vuepress-blog-build-journey/local-build-2.html",
-    "revision": "b6427d5974b458b832b99726c1579b3e"
+    "revision": "b6c5f572059fa09a5c35cc03bbf59570"
   },
   {
     "url": "tag/index.html",
-    "revision": "afff5f6fcd8db625b19d6b0fce973a74"
+    "revision": "b04148721fbfaf54d72be3276016e1a6"
   },
   {
     "url": "tag/Java/index.html",
-    "revision": "6ee6f6dd03ba94b8b7516761813e9319"
+    "revision": "32324bf2b70621e1eb61f04901b765c3"
   },
   {
     "url": "tag/JVM/index.html",
-    "revision": "8b31991cda316ffc988ef25579acb3fb"
+    "revision": "c59dc9dbe479e329e27bbd88edaf1fbe"
   },
   {
     "url": "tag/PWA/index.html",
-    "revision": "a391caedc3e76be0467d6d6c2f0f7461"
+    "revision": "89c50e052fbc9df266a811ea506fb38e"
   },
   {
     "url": "tag/SPA/index.html",
-    "revision": "e550347f058fb1749ec9ab5311ef7c87"
+    "revision": "90c07897412f75da58814a3708847ff0"
   },
   {
     "url": "tag/Vue/index.html",
-    "revision": "e0ed6551c75196075283a937fcdbd1ea"
+    "revision": "b529b2c6b65137bb6f1e2416333b8c3a"
   },
   {
     "url": "tag/VuePress/index.html",
-    "revision": "a96056d7c0a1c54da18d8b39678ffc40"
+    "revision": "2ce8e31873a75df079e7489843551a9e"
   },
   {
     "url": "timeline/index.html",
-    "revision": "7aa7f8d6c4a9da26e87b769cf2c158ca"
+    "revision": "7b052b000713e6b42628551afb8bc0e2"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
