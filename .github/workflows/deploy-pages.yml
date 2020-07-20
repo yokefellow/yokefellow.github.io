@@ -34,8 +34,8 @@ jobs:
           #Sitemap Config
           SitemapHostname: https://yokefellow.github.io
         run: |
-          npm install 
-          npm run build
+          yarn install 
+          yarn run build
       
        # 如果发布到自定义域名
       # - name: Add the domain 
@@ -77,8 +77,8 @@ jobs:
           #Sitemap Config
           SitemapHostname: https://yokefellow.gitee.io
         run: |
-          npm install 
-          npm run build
+          yarn install 
+          yarn run build
 
       # 如果发布到自定义域名
       # - name: Add the domain 
