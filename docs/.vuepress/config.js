@@ -1,7 +1,7 @@
 const themeConfig = require('./config/theme/')
 
 module.exports = {
-  title: "Yokefellow | 风中尘埃",
+  title: "Yokefellow | 尘埃",
   description: 'Talk is cheap. Show me the code.——Linus Torvalds',
   dest: 'dist',
   locales: {
