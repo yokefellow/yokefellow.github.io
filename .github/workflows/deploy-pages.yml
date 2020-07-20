@@ -93,7 +93,7 @@ jobs:
           # 在 Settings -> Secrets 配置 GITEE_RSA_PRIVATE_KEY
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
         with:
-          # 替换为你的 Gitee 目标仓库地址
+          # 替换为你的 Gitee Pages 仓库地址
           gitee_repo: "git@gitee.com:yokefellow/yokefellow.git"
           folder: dist
           git_user_email: yuan1241900094@gmail.com
