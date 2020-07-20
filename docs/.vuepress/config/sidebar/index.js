@@ -1,13 +1,13 @@
 module.exports = {
-  '/posts/2020/07/06/Java/': [
+  '/posts/java-learning/': [
     {
-        title: '基础',
-        collapsable: true,
-        children: [
-          '',
-          'basic-1',
-          'basic-2',
-        ]
+      title: '基础',
+      collapsable: true,
+      children: [
+        '',
+        'basic-1',
+        'basic-2',
+      ]
     },
     {
       title: '进阶',
@@ -16,6 +16,18 @@ module.exports = {
         'advanced-1',
         'advanced-2',
       ]
-    }   
+    }
+  ],
+  '/posts/vuepress-blog-build-journey/': [
+    {
+      title: '介绍',
+      collapsable: true,
+      children: [
+        '',
+        'intro-vuepress',
+        'intro-vuepress-theme-reco',
+      ]
+    }
   ]
 }
+
