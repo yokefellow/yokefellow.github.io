@@ -67,6 +67,7 @@ jobs:
           Repo: yokefellow
           ClientID: ${{ secrets.VSSUE_GITEE_CLIENT_ID }}
           ClientSecret: ${{ secrets.VSSUE_GITEE_CLIENT_SECRET }}
+          
           #Sitemap Config
           SitemapHostname: https://yokefellow.gitee.io
         run: |
