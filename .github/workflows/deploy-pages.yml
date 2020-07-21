@@ -43,8 +43,7 @@ jobs:
           personal_token: ${{ secrets.ACCESS_TOKEN }}
           publish_branch: master
           publish_dir: ./dist
-          commit_message: ${{ github.event.head_commit.message }}
-          enable_jekyll: true
+          commit_message: 🚀 ${{ github.event.head_commit.message }} to master from @
 
   sync-and-build:
     name: Sync Gitee Pages
