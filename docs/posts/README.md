@@ -1,1 +1,1 @@
-### Yokefellow's blog [website](https://yokefellow.github.io)
+### [Welcome to Yokefellow's blog](https://yokefellow.github.io)
