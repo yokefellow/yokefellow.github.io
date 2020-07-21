@@ -30,7 +30,6 @@ jobs:
           Repo: yokefellow.github.io
           ClientID: ${{ secrets.VSSUE_CLIENT_ID }}
           ClientSecret: ${{ secrets.VSSUE_CLIENT_SECRET }}
-
           #Sitemap Config
           SitemapHostname: https://yokefellow.github.io
         run: |
@@ -43,7 +42,9 @@ jobs:
         with:
           personal_token: ${{ secrets.ACCESS_TOKEN }}
           publish_branch: master
-          publish_dir: dist
+          publish_dir: ./dist
+          enable_jekyll: false
+          full_commit_message: ${{ github.event.head_commit.message }}
 
   sync-and-build:
     name: Sync Gitee Pages
@@ -66,18 +67,11 @@ jobs:
           Repo: yokefellow
           ClientID: ${{ secrets.VSSUE_GITEE_CLIENT_ID }}
           ClientSecret: ${{ secrets.VSSUE_GITEE_CLIENT_SECRET }}
-          
           #Sitemap Config
           SitemapHostname: https://yokefellow.gitee.io
         run: |
           yarn install 
-          yarn run build
-
-      # 如果发布到自定义域名
-      # - name: Add the domain 
-      #   run: |
-      #     cd dist 
-      #     echo 'blog.yokefellow.com.cn' > CNAME
+          yarn run build 
 
       # 将静态文件和源码同步到 Gitee Pages
       - name: Sync Gitee Pages 🌀
@@ -91,8 +85,7 @@ jobs:
           folder: dist
           git_user_email: 1241900094@qq.com
           git_user_name: yokefellow
-          # source_github_remote_branch: gh-pages-source
-          # source_gitee_remote_branch: gh-pages-source
+          cname: blog.yokefellow.com.cn
 
       # 实现 Gitee Pages 的自动部署
       - name: Build Gitee Pages 🔧
