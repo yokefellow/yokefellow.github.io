@@ -36,21 +36,14 @@ jobs:
         run: |
           yarn install 
           yarn run build
-      
-       # 如果发布到自定义域名
-      # - name: Add the domain 
-      #   run: |
-      #     cd dist 
-      #     echo 'blog.yokefellow.com.cn' > CNAME
 
       # 部署到 GitHub Pages
       - name: Deploy GitHub Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: master
-          FOLDER: dist
-          CLEAN: true
+          personal_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_branch: master
+          publish_dir: dist
 
   sync-and-build:
     name: Sync Gitee Pages
