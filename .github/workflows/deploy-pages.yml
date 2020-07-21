@@ -86,7 +86,8 @@ jobs:
           git_user_email: 1241900094@qq.com
           git_user_name: yokefellow
           cname: blog.yokefellow.com.cn
-          gitee_pages_branch: 🌀 Sync from GitHub Actions
+          gitee_pages_branch: master
+          commit_message: 🌀 Sync from GitHub Actions
 
       # 实现 Gitee Pages 的自动部署
       - name: Build Gitee Pages 🔧
