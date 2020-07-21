@@ -38,12 +38,13 @@ jobs:
 
       # 部署到 GitHub Pages
       - name: Deploy GitHub Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: peaceiris/actions-gh-pages@v3.6.4
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: master
-          FOLDER: dist
-          CLEAN: true
+          personal_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_branch: master
+          publish_dir: ./dist
+          commit_message: ${{ github.event.head_commit.message }}
+          enable_jekyll: true
 
   sync-and-build:
     name: Sync Gitee Pages
@@ -85,6 +86,7 @@ jobs:
           git_user_email: 1241900094@qq.com
           git_user_name: yokefellow
           cname: blog.yokefellow.com.cn
+  
 
       # 实现 Gitee Pages 的自动部署
       - name: Build Gitee Pages 🔧
