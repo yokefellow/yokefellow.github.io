@@ -58,6 +58,15 @@ $$
 \sin \frac{\alpha - \beta}{2} 
 $$
 
+$$
+O = \begin{bmatrix}  
+  0 & 0 & \cdots & 0 \\  
+  0 & 0 & \cdots & 0 \\  
+  \vdots & \vdots & \ddots & \vdots \\  
+  0 & 0 & \cdots & 0  
+\end{bmatrix} 
+$$
+
 ## 4.图片
 
 ![头像](/images/favicon-508x508.png)

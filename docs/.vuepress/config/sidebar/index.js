@@ -42,6 +42,7 @@ module.exports = {
       children: [
         'deploy-1',
         'deploy-2',
+        'deploy-3',
       ]
     }
   ]
