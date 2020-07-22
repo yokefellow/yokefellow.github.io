@@ -127,7 +127,8 @@ module.exports = {
     '@vuepress/nprogress',
     ['sitemap',
       {
-        hostname: process.env.SitemapHostname
+        // hostname: process.env.SitemapHostname
+        hostname: 'https://yokefellow.github.io'
       }
     ],
     /* https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-last-updated.html */
@@ -137,7 +138,8 @@ module.exports = {
           /* https://momentjs.com */
           const moment = require('moment')
           moment.locale(lang)
-          return moment(timestamp).format('llll');
+          /* https://www.w3.org/TR/NOTE-datetime */
+          return moment(timestamp).format('YYYY-MM-DD HH:mm:ss');
         }
       }
     ]
