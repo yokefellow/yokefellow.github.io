@@ -291,5 +291,12 @@ module.exports = {
         },
       },
     ],
-  ],
-};
+    /* https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-google-analytics.html */
+    [
+      '@vuepress/google-analytics',
+      {
+        'ga': process.env.GoogleAnalyticsID
+      }
+    ]
+  ]
+}

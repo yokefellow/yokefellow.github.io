@@ -34,6 +34,8 @@ jobs:
           SitemapHostname: https://yokefellow.github.io
           #Google Search Console Config
           GoogleSiteVerification: iSjPDbJMyZy56rE4_RXomTvvzBmPjaJIwKf5gtB8YlQ
+          #Google Analytics Config
+          GoogleAnalyticsID: UA-173603129-1
         run: |
           yarn install 
           yarn run build
@@ -73,6 +75,8 @@ jobs:
           SitemapHostname: https://yokefellow.gitee.io
           #Google Search Console Config
           GoogleSiteVerification: 2SVLrZXeufuyrSmPA13Wg6uD5eWehH1gfQxUTuFIdrY
+          #Google Analytics Config
+          GoogleAnalyticsID: UA-173603129-2
         run: |
           yarn install 
           yarn run build 
