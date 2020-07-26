@@ -32,6 +32,8 @@ jobs:
           ClientSecret: ${{ secrets.VSSUE_CLIENT_SECRET }}
           #Sitemap Config
           SitemapHostname: https://yokefellow.github.io
+          #Google Search Console Config
+          GoogleSiteVerification: iSjPDbJMyZy56rE4_RXomTvvzBmPjaJIwKf5gtB8YlQ
         run: |
           yarn install 
           yarn run build
@@ -69,6 +71,8 @@ jobs:
           ClientSecret: ${{ secrets.VSSUE_GITEE_CLIENT_SECRET }}
           #Sitemap Config
           SitemapHostname: https://yokefellow.gitee.io
+          #Google Search Console Config
+          GoogleSiteVerification: 2SVLrZXeufuyrSmPA13Wg6uD5eWehH1gfQxUTuFIdrY
         run: |
           yarn install 
           yarn run build 
@@ -85,7 +89,7 @@ jobs:
           folder: dist
           git_user_email: 1241900094@qq.com
           git_user_name: yokefellow
-          cname: blog.yokefellow.com.cn
+          # cname: blog.yokefellow.com.cn
           gitee_pages_branch: master
           commit_message: 🌀 Sync from GitHub Actions
 

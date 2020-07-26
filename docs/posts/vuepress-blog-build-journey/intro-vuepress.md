@@ -8,4 +8,5 @@ tags:
  - VuePress
  - PWA
  - SPA
+sidebar: true
 ---

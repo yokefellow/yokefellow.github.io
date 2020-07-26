@@ -5,4 +5,5 @@ categories:
  - FrontEnd
 tags: 
  - VuePress
+sidebar: true
 ---

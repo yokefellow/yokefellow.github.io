@@ -1,1 +1,0 @@
-### [Welcome to Yokefellow's blog](https://yokefellow.github.io)

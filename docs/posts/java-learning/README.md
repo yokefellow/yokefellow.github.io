@@ -6,6 +6,7 @@ categories:
 tags: 
  - Java
 sticky: 1
+sidebar: true
 ---
 
 ::: tip
