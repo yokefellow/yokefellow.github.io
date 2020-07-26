@@ -212,7 +212,9 @@ module.exports = {
     extendMarkdown: (md) => {
       /* 使用更多的 markdown-it 插件! */
       /* https://github.com/iktakahiro/markdown-it-katex */
-      md.use(require("@iktakahiro/markdown-it-katex"));
+      md.use(require("@iktakahiro/markdown-it-katex"))
+      /* https://github.com/gmunguia/markdown-it-plantuml*/
+      md.use(require("markdown-it-plantuml"))
     },
   },
   plugins: [
@@ -231,7 +233,7 @@ module.exports = {
     [
       "@vuepress/medium-zoom",
       {
-        selector: ".theme-reco-content img",
+        selector: ".theme-reco-content img:not(.zoom-unable)",
         options: {
           margin: 16,
         },
@@ -297,6 +299,8 @@ module.exports = {
       {
         'ga': process.env.GoogleAnalyticsID
       }
-    ]
+    ],
+    /* https://github.com/vuepress-reco/vuepress-plugin-extract-code */
+    '@vuepress-reco/extract-code'
   ]
 }
