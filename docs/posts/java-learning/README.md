@@ -77,55 +77,12 @@ $$
 
 <Meting server="netease" type="song" mid="405597568" :lrc-type="3"/>
 
-## 6.Extract Code
-
-### 6.1 展示 Vue 组件
-
-<RecoDemo :collapse="true">
-  <template slot="code-template">
-    <<< @/docs/.vuepress/components/Demo.vue?template
-  </template>
-  <template slot="code-script">
-    <<< @/docs/.vuepress/components/Demo.vue?script
-  </template>
-  <template slot="code-style">
-    <<< @/docs/.vuepress/components/Demo.vue?style
-  </template>
-</RecoDemo>
-
-## 7.UML
+## 6.UML
 
 @startuml
 Bob -> Alice : hello
 @enduml
 
-## 8.自定义组件
+## 7.打赏插件
 
-### 8.1 在线工具卡片
-
-#### 8.1.2 搜索引擎
-
-<div class="container">
-  <div class="row">
-    <OnlineToolsCard
-      url="https://baidu.com"
-      logoPath="/online-tools-logo/baidu.png"
-      onlineToolName="百度"
-      onlineToolDescription="全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。百度超过千亿的中文网页数据库，可以瞬间找到相关的搜索结果。"/>
-    <OnlineToolsCard
-      url="https://google.com"
-      logoPath="/online-tools-logo/google.png"
-      onlineToolName="Google"
-      onlineToolDescription="Google搜索是Google公司重要也是最普及的一项功能，是多个国家内使用率最高的互联网搜索引擎。"/>
-    <OnlineToolsCard
-      url="https://cn.bing.com"
-      logoPath="/online-tools-logo/bing.png"
-      onlineToolName="Bing"
-      onlineToolDescription="微软Bing搜索是国际领先的搜索引擎，为中国用户提供网页、图片、视频、学术、词典、翻译、地图等全球信息搜索服务。"/>
-    <OnlineToolsCard
-      url="https://cn.bing.com"
-      logoPath="/online-tools-logo/bing.png"
-      onlineToolName="Bing"
-      onlineToolDescription="微软Bing搜索是国际领先的搜索引擎，为中国用户提供网页、图片、视频、学术、词典、翻译、地图等全球信息搜索服务。"/>
-  </div>
-</div>
+<SponsorSimple/>

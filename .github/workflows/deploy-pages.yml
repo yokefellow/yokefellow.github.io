@@ -107,5 +107,3 @@ jobs:
           gitee-password: ${{ secrets.GITEE_PASSWORD }}
           # 替换为你的 Gitee Repo
           gitee-repo: yokefellow
-
-  

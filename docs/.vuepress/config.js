@@ -4,6 +4,7 @@ module.exports = {
   title: "Yokefellow",
   description: "Talk is cheap. Show me the code.——Linus Torvalds",
   dest: "dist",
+  port: "8081",
   locales: {
     "/": {
       lang: "zh-CN",
@@ -212,9 +213,9 @@ module.exports = {
     extendMarkdown: (md) => {
       /* 使用更多的 markdown-it 插件! */
       /* https://github.com/iktakahiro/markdown-it-katex */
-      md.use(require("@iktakahiro/markdown-it-katex"))
+      md.use(require("@iktakahiro/markdown-it-katex"));
       /* https://github.com/gmunguia/markdown-it-plantuml*/
-      md.use(require("markdown-it-plantuml"))
+      md.use(require("markdown-it-plantuml"));
     },
   },
   plugins: [
@@ -277,7 +278,7 @@ module.exports = {
     [
       "sitemap",
       {
-        hostname: process.env.SitemapHostname
+        hostname: process.env.SitemapHostname,
       },
     ],
     /* https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-last-updated.html */
@@ -291,16 +292,14 @@ module.exports = {
           /* https://www.w3.org/TR/NOTE-datetime */
           return moment(timestamp).format("YYYY-MM-DD HH:mm:ss");
         },
-      },
+      }
     ],
     /* https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-google-analytics.html */
     [
-      '@vuepress/google-analytics',
+      "@vuepress/google-analytics",
       {
-        'ga': process.env.GoogleAnalyticsID
-      }
-    ],
-    /* https://github.com/vuepress-reco/vuepress-plugin-extract-code */
-    '@vuepress-reco/extract-code'
+        ga: process.env.GoogleAnalyticsID,
+      },
+    ]
   ]
 }
