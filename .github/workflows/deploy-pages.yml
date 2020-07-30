@@ -106,4 +106,4 @@ jobs:
           # 在 Settings -> Secrets 配置 GITEE_PASSWORD
           gitee-password: ${{ secrets.GITEE_PASSWORD }}
           # 替换为你的 Gitee Repo
-          gitee-repo: yokefellow
+          gitee-repo: yokefellow/yokefellow
