@@ -46,13 +46,14 @@ export default {
   },
   mounted() {
     this.toolsCardItemWidth = this.$refs.item[0].clientWidth
+    window.addEventListener("resize", this.getToolsCardItemWidth)
   },
-  created() {
-    window.addEventListener("resize", this.getToolsCardItemWidth);
-  },
-  destroyed() {
-    window.removeEventListener("resize", this.getToolsCardItemWidth);
-  },
+  // created() {
+  //   window.addEventListener("resize", this.getToolsCardItemWidth)
+  // },
+  // destroyed() {
+  //   window.removeEventListener("resize", this.getToolsCardItemWidth)
+  // },
   watch: {
     toolsCardItemWidth() {
       this.changeLogoType(this.toolsCardItemWidth)
@@ -64,10 +65,8 @@ export default {
     },
     changeLogoType(toolsCardItemWidth) {
       if(toolsCardItemWidth > 240){
-        //显示默认logo
         this.showMiniLogo = false
       } else {
-        //显示 mini logo
         this.showMiniLogo = true
       }
     }
