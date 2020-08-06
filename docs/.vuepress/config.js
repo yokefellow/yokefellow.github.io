@@ -5,6 +5,7 @@ module.exports = {
   description: "Talk is cheap. Show me the code.——Linus Torvalds",
   dest: "dist",
   port: "8081",
+  host: "localhost",
   locales: {
     "/": {
       lang: "zh-CN",

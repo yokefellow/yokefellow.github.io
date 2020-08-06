@@ -80,9 +80,31 @@ $$
 ## 6.UML
 
 @startuml
-Bob -> Alice : hello
+node in as "input"
+node p as "Pre-processing"
+node fm as "Feature Mining"
+node fs as "Feature Selection"
+node fr as "Feature Reduction"
+node m as "Modelling"
+node a as "Accepted Results?"
+node pp as "Post-processing"
+node o as "Output"
+
+in -> p
+p ..> fm
+fm ..> fs
+fs ..> fr
+fr ..> m
+m ..> a
+a ..> fm : no
+a -> pp : yes
+pp -> o
 @enduml
 
-## 7.打赏插件
+## 7.图表
+
+<TechnologyStackRadarChart/>
+
+## 8.打赏插件
 
 <SponsorSimple/>

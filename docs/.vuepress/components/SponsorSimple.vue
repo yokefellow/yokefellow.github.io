@@ -1,7 +1,7 @@
 <template>
   <div class="sponsor-container">
     <div class="sponsor-layout">
-      <div class="sponsor-logo position-absolute" :class="{blurry: isBlurry}">Sponsor</div>
+      <div class="sponsor-love position-absolute transition-3ms" :class="{blurry: isBlurry}">Sponsor</div>
       <a
         class="sponsor-github position-absolute transition-3ms"
         :class="{blurry: isBlurry}"
@@ -10,75 +10,96 @@
         title="Github">
       </a>
       <ul class="sponsor-payment-options transition-3ms" :class="{blurry: isBlurry}">
-        <li id="alipay-option" @click="showQRCode(alipayQR)"></li>
-        <li id="wechat-option" @click="showQRCode(wechatQR)"></li>
-        <li id="qq-option" @click="showQRCode(qqQR)"></li>
-        <li id="paypal-option" @click="jumpToNewTab(paypalURL)"></li>
+        <li id="alipay-option" class="transition-3ms" @click="showQRCode(alipayQR,'支付宝')"></li>
+        <li id="wechat-option" class="transition-3ms" @click="showQRCode(wechatQR,'微信支付')"></li>
+        <li id="qq-option" class="transition-3ms" @click="showQRCode(qqQR,'QQ支付')"></li>
+        <li id="paypal-option" class="transition-3ms" @click="jumpToNewTab(paypalURL,'PayPal')"></li>
       </ul>
     </div>
-    <transition name='fade'>
-      <div class="sponsor-qrcode-container position-absolute" v-show="fadeQRCodeContainer">
-        <div
-          class="sponsor-qrcode-info"
-          @click="closeQRCode()"
-          :class="{'show-qrcode': isShowQRCode, 'hide-qrcode': isHidingQRCode}"
-          :style="{backgroundImage: 'url(' + currentQRCode + ')'}">
-        </div>
+    <transition name="fade-qrcode-container">
+      <div class="sponsor-qrcode-container position-absolute" v-show="isShowQRCodeContainer">
+        <transition name="fade-qrcode">
+          <div
+            class="sponsor-qrcode-info"
+            :style="{backgroundImage: 'url(' + currentQRCode + ')'}"
+            @click="closeQRCode()"
+            v-show="isShowQRCode">
+          </div>
+        </transition>
       </div>
     </transition>
-    
+    <transition name="fade-message">
+      <div class="sponsor-message position-absolute" v-show="isShowMessage">{{message}}</div>
+    </transition>
   </div>
 </template>
 
 <script>
 export default {
+  name: "SponsorSimple",
   props: {
-    qrcodeConfig: {
+    sponsorConfig: {
       required: false,
       type: Object,
       default() {
         return {
-          alipay: "./sponsor-logo/qrcode-alipay.png",
-          wechat: "./sponsor-logo/qrcode-wechat.png",
-          qq: "./sponsor-logo/qrcode-qq.png",
-          paypal: "https://www.paypal.me/yokefellow",
+          theme: "simple",
+          // alipay: "./sponsor-logo/qrcode-alipay.png",
+          alipay: "",
+          wechat: "/sponsor-qrcode/qrcode-wechat.png",
+          qq: "/sponsor-qrcode/qrcode-qq.png",
+          // paypal: "https://www.paypal.me/yokefellow",
+          paypal: "",
+          duration: 1500
         }
       }
     }
   },
   data() {
     return {
-      alipayQR: require(`${this.qrcodeConfig.alipay}`),
-      wechatQR: require(`${this.qrcodeConfig.wechat}`),
-      qqQR: require(`${this.qrcodeConfig.qq}`),
-      paypalURL: this.qrcodeConfig.paypal,
+      alipayQR: this.sponsorConfig.alipay,
+      wechatQR: this.sponsorConfig.wechat,
+      qqQR: this.sponsorConfig.qq,
+      paypalURL: this.sponsorConfig.paypal,
+      messageDuration: this.sponsorConfig.duration,
       currentQRCode: "",
+      message: "",
       isBlurry: false,
       isShowQRCode: false,
-      isHidingQRCode: false,
-      fadeQRCodeContainer: false
+      isShowQRCodeContainer: false,
+      isShowMessage: false
     }
   },
   methods: {
-    showQRCode(url) {
+    showQRCode(url,msg) {
+      if(!url){
+        return this.showMessage(msg)
+      }
+      this.isShowMessage = false
       this.currentQRCode = url
       this.isBlurry = true
-      setTimeout(() => {
-        this.fadeQRCodeContainer = true
-        this.isShowQRCode = true
-      }, 200);
+      this.isShowQRCodeContainer = true
+      this.isShowQRCode = true
+    },
+    jumpToNewTab(url,msg) {
+      if(!url){
+        return this.showMessage(msg)
+      }
+      window.open(url, "_blank")
     },
     closeQRCode() {
       this.isShowQRCode = false
-      this.isHidingQRCode = true
       setTimeout(() => {
-          this.fadeQRCodeContainer = false
-          this.isHidingQRCode = false
-          this.isBlurry = false
-      }, 600)
+        this.isShowQRCodeContainer = false
+        this.isBlurry = false
+      },600)
     },
-    jumpToNewTab(url) {
-      window.open(url,"_blank")
+    showMessage(msg) {
+      this.message = `主人忘记设置${msg}啦`
+      this.isShowMessage = true,
+      setTimeout(() => {
+        this.isShowMessage = false
+      },this.messageDuration)
     }
   }
 }
@@ -121,18 +142,19 @@ export default {
   .sponsor-layout {
     margin: 80px 0;
     position: relative;
+    z-index: 0
 
-    .sponsor-logo {
+    .sponsor-love {
       font-size: 12px;
       width: 70px;
       height: 70px;
       line-height: 70px;
       color: #fff;
-      background: url('./sponsor-logo/like.svg') #ffd886 no-repeat center 10px;
+      background: url('./sponsor-logo/love.svg') #ffd886 no-repeat center 10px;
       background-size: 20px;
       border-radius: 35px;
       text-align: center;
-      left: calc(50% - 120px);
+      left: 30px;
       top: calc(50% - 60px);
       z-index: -1;
       transform: rotatez(-15deg);
@@ -151,6 +173,7 @@ export default {
       background: url('./sponsor-logo/github.svg') no-repeat center center;
       background-size: contain;
       opacity: 0.3;
+      z-index: -1;
       transform: rotatez(15deg);
       -ms-transform: rotatez(15deg);
       -moz-transform: rotatez(15deg);
@@ -159,6 +182,7 @@ export default {
     }
 
     .sponsor-payment-options {
+      display: flex
       background-color: #fff;
       border: 1px solid #ddd;
       border-radius: 6px;
@@ -167,16 +191,11 @@ export default {
 
       li {
         width: 74px;
-        float: left;
-        text-align: center;
         border-left: 1px solid #ddd;
         background: no-repeat center center;
         background-color: rgba(204, 217, 220, 0.1);
         background-size: 45px;
         cursor: pointer;
-        overflow: hidden;
-        line-height: 600px;
-        height: 28px;
         -webkit-filter: grayscale(1);
         filter: grayscale(1);
         opacity: 0.5;
@@ -213,14 +232,13 @@ export default {
   }
 
   .sponsor-qrcode-container {
-    top: 0;
-    left: 0;
-    width: 100%;
     height: 100%;
     z-index: 1;
-    background-color: rgba(255, 255, 255, 0.3);
     perspective: 400px;
-    transition: opacity 0.3s;
+    transition: opacity .3s;
+    -moz-transition: opacity .3s;
+    -webkit-transition: opacity .3s;
+    -o-transition: opacity .3s;
 
     .sponsor-qrcode-info {
       cursor: pointer;
@@ -234,7 +252,6 @@ export default {
       background-size: 190px;
       border-radius: 6px;
       box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
-      opacity: 0;
       transition: all 1s ease-in-out;
       -moz-transition: all 1s ease-in-out;
       -webkit-transition: all 1s ease-in-out;
@@ -247,27 +264,18 @@ export default {
       -moz-transform-origin: center center;
       -o-transform-origin: center center;
       overflow: hidden;
-
-      &.show-qrcode {
-        opacity: 1;
-        animation-name: show-qrcode;
-        animation-duration: 3s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-        -webkit-animation: show-qrcode 3s ease-in-out 0s 1 normal forwards;
-      }
-
-      &.hide-qrcode {
-        opacity: 1;
-        animation-name: hide-qrcode;
-        animation-duration: 0.5s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-        -webkit-animation: hide-qrcode 0.5s ease-in-out 0s 1 normal forwards;
-      }
     }
+  }
+  .sponsor-message {
+    bottom: 36px;
+    border-radius: 6px;
+    background-color: rgba(100,100,100,0.8);
+    padding: 0 6px;
+    font-size: 12px;
+    text-align: center
+    height: 24px;
+    line-height: 24px;
+    color: #fff;
   }
 }
 
@@ -322,23 +330,51 @@ export default {
 }
 
 @keyframes hide-qrcode {
-  from {}
-  20%,
-  50% {
+  from {
+  }
+
+  20%, 50% {
     transform: scale(1.08, 1.08);
     opacity: 1;
   }
+
   to {
     opacity: 0;
     transform: rotateZ(40deg) scale(0.6, 0.6);
   }
 }
 
-.fade-enter-active, .fade-leave-active{
-  transition: opacity .3s;
+
+.fade-qrcode-container-enter, .fade-qrcode-container-leave-to {
+  opacity: 0;
 }
 
-.fade-enter, .fade-leave-to {
+.fade-qrcode-enter-active {
+  animation-name: show-qrcode;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  -webkit-animation: show-qrcode 3s ease-in-out 0s 1 normal forwards;
+}
+
+.fade-qrcode-leave-active {
+  animation-name: hide-qrcode;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  -webkit-animation: hide-qrcode 0.5s ease-in-out 0s 1 normal forwards;
+}
+
+.fade-message-enter-active, .fade-message-leave-active{
+  transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+}
+
+.fade-message-enter, .fade-message-leave-to {
   opacity: 0;
 }
 </style>

@@ -5,7 +5,7 @@ module.exports = [
     logoMiniPath: "/tools-logo/logo-google-mini.png",
     name: "Google",
     description: "Google搜索是Google公司重要也是最普及的一项功能，是多个国家内使用率最高的互联网搜索引擎。",
-    recommend: true
+    tag: "recommendable"
   },
   {
     url: "https://cn.bing.com",
@@ -20,6 +20,6 @@ module.exports = [
     logoMiniPath: "/tools-logo/logo-baidu-mini.svg",
     name: "百度",
     description: "全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。百度超过千亿的中文网页数据库，可以瞬间找到相关的搜索结果。",
-    recommend: false
+    tag: "outdated"
   }
 ]
