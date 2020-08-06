@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="technology-stack-radar-container">
     <div class="technology-stack-radar-form">
       <label for="backend">后端</label>
       <input id="backend" type="radio" name="technology-stack" @change="selectData($event)" checked/>
