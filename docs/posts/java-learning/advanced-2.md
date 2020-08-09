@@ -1,13 +1,12 @@
 ---
 title: Java进阶知识2
 date: 2020-07-09
-categories: 
- - BackEnd
-tags: 
- - Java
+categories:
+  - BackEnd
+tags:
+  - Java
 sidebar: true
 ---
-
 
 ## 1
 

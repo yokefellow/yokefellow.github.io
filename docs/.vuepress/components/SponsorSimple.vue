@@ -1,25 +1,55 @@
 <template>
   <div class="sponsor-container">
-    <div class="sponsor-love position-absolute transition-3ms" :class="{blurry: isBlurry}">Sponsor</div>
+    <div
+      class="sponsor-love position-absolute transition-3ms"
+      :class="{ blurry: isBlurry }"
+    >
+      Sponsor
+    </div>
     <a
       class="sponsor-github position-absolute transition-3ms"
-      :class="{blurry: isBlurry}"
+      :class="{ blurry: isBlurry }"
       href="https://github.com/yokefellow/vuepress-plugin-sponsor"
       target="_blank"
       title="Github"
     ></a>
-    <ul class="sponsor-payment-options transition-3ms" :class="{blurry: isBlurry}">
-      <li id="alipay-option" class="transition-3ms" @click="showQRCode(alipayQR,'支付宝')"></li>
-      <li id="wechat-option" class="transition-3ms" @click="showQRCode(wechatQR,'微信支付')"></li>
-      <li id="qq-option" class="transition-3ms" @click="showQRCode(qqQR,'QQ支付')"></li>
-      <li id="paypal-option" class="transition-3ms" @click="jumpToNewTab(paypalURL,'PayPal')"></li>
+    <ul
+      class="sponsor-payment-options transition-3ms"
+      :class="{ blurry: isBlurry }"
+    >
+      <li
+        id="alipay-option"
+        class="transition-3ms"
+        @click="showQRCode(alipayQR, '支付宝')"
+      ></li>
+      <li
+        id="wechat-option"
+        class="transition-3ms"
+        @click="showQRCode(wechatQR, '微信支付')"
+      ></li>
+      <li
+        id="qq-option"
+        class="transition-3ms"
+        @click="showQRCode(qqQR, 'QQ支付')"
+      ></li>
+      <li
+        id="paypal-option"
+        class="transition-3ms"
+        @click="jumpToNewTab(paypalURL, 'PayPal')"
+      ></li>
     </ul>
     <transition name="fade-qrcode-container">
-      <div class="sponsor-qrcode-container position-absolute" v-show="isShowQRContainer">
+      <div
+        class="sponsor-qrcode-container position-absolute"
+        v-show="isShowQRContainer"
+      >
         <transition name="fade-qrcode">
           <div
             class="sponsor-qrcode-info"
-            :style="{backgroundImage: 'url(' + currentQRCode + ')', pointerEvents: isShowQRCode? 'auto':'none'}"
+            :style="{
+              backgroundImage: 'url(' + currentQRCode + ')',
+              pointerEvents: isShowQRCode ? 'auto' : 'none',
+            }"
             @click="closeQRCode()"
             v-show="isShowQRCode"
           ></div>
@@ -27,7 +57,9 @@
       </div>
     </transition>
     <transition name="fade-message">
-      <div class="sponsor-message position-absolute" v-show="isShowMessage">{{message}}</div>
+      <div class="sponsor-message position-absolute" v-show="isShowMessage">
+        {{ message }}
+      </div>
     </transition>
   </div>
 </template>

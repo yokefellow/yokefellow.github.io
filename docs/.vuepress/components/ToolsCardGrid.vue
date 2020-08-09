@@ -1,15 +1,26 @@
 <template>
   <div class="tools-card-grid-container">
     <div class="tools-card-item" v-for="item in toolsArray" ref="item">
-      <div class="tools-card-tag"
+      <div
+        class="tools-card-tag"
         v-if="item.tag"
-        :style="{backgroundImage: 'url(' + item.tag + ')' }">
-      </div>
+        :style="{ backgroundImage: 'url(' + item.tag + ')' }"
+      ></div>
       <a :href="item.url" target="_blank" :title="item.description">
         <div class="tools-card-info">
           <div class="tools-card-title">
-            <img :src="item.logoMiniPath" v-show="showMiniLogo" height="30" class="zoom-unable"/>
-            <img :src="item.logoPath" v-show="!showMiniLogo" height="30" class="zoom-unable"/>
+            <img
+              :src="item.logoMiniPath"
+              v-show="showMiniLogo"
+              height="30"
+              class="zoom-unable"
+            />
+            <img
+              :src="item.logoPath"
+              v-show="!showMiniLogo"
+              height="30"
+              class="zoom-unable"
+            />
             <div class="tools-card-name">{{ item.name }}</div>
           </div>
           <div class="tools-card-description">{{ item.description }}</div>
@@ -21,12 +32,12 @@
 
 <script>
 export default {
-  name: "ToolsCardGrid",
+  name: 'ToolsCardGrid',
   props: {
     configFilePath: {
       required: true,
       type: String,
-    }
+    },
   },
   data() {
     return {
@@ -35,36 +46,27 @@ export default {
       showMiniLogo: false,
     }
   },
-  computed: {
-    // toolsArray() {
-    //   let toolsArray = require(`../config/${this.configFilePath}`).map((item) => {
-    //     item.tag = typeof item.tag !== "undefined" ? require(`./tools-tag/${item.tag}.svg`):false
-    //     return item
-    //   })
-    //   return toolsArray
-    // }
-  },
   mounted() {
     this.toolsCardItemWidth = this.$refs.item[0].clientWidth
-    window.addEventListener("resize", this.getToolsCardItemWidth)
+    window.addEventListener('resize', this.getToolsCardItemWidth)
   },
   watch: {
     toolsCardItemWidth() {
       this.changeLogoType(this.toolsCardItemWidth)
-    }
+    },
   },
   methods: {
     getToolsCardItemWidth() {
       this.toolsCardItemWidth = this.$refs.item[0].clientWidth
     },
     changeLogoType(toolsCardItemWidth) {
-      if(toolsCardItemWidth > 240){
+      if (toolsCardItemWidth > 240) {
         this.showMiniLogo = false
       } else {
         this.showMiniLogo = true
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

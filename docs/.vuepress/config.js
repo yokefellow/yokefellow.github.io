@@ -1,209 +1,209 @@
-const themeConfig = require("./config/theme/");
+const themeConfig = require('./config/theme/')
 
 module.exports = {
-  title: "Yokefellow",
-  description: "Talk is cheap. Show me the code.——Linus Torvalds",
-  dest: "dist",
-  port: "8081",
-  host: "localhost",
+  title: 'Yokefellow',
+  description: 'Talk is cheap. Show me the code.——Linus Torvalds',
+  dest: 'dist',
+  port: '8081',
+  host: 'localhost',
   locales: {
-    "/": {
-      lang: "zh-CN",
+    '/': {
+      lang: 'zh-CN',
     },
   },
   head: [
-    ["link", { rel: "manifest", href: "/manifest.json" }],
-    ["meta", { name: "theme-color", content: "#42b983" }],
+    ['link', { rel: 'manifest', href: '/manifest.json' }],
+    ['meta', { name: 'theme-color', content: '#42b983' }],
     [
-      "meta",
+      'meta',
       {
-        name: "viewport",
-        content: "width=device-width,initial-scale=1,user-scalable=no",
+        name: 'viewport',
+        content: 'width=device-width,initial-scale=1,user-scalable=no',
       },
     ],
 
-    ["link", { rel: "icon", href: "/favicon.ico" }],
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
     [
-      "link",
+      'link',
       {
-        rel: "icon",
-        type: "image/x-icon",
-        sizes: "16x16",
-        href: "/images/favicon-16x16.ico",
+        rel: 'icon',
+        type: 'image/x-icon',
+        sizes: '16x16',
+        href: '/images/favicon-16x16.ico',
       },
     ],
     [
-      "link",
+      'link',
       {
-        rel: "icon",
-        type: "image/x-icon",
-        sizes: "48x48",
-        href: "/images/favicon-48x48.ico",
+        rel: 'icon',
+        type: 'image/x-icon',
+        sizes: '48x48',
+        href: '/images/favicon-48x48.ico',
       },
     ],
     [
-      "link",
+      'link',
       {
-        rel: "icon",
-        type: "image/x-icon",
-        sizes: "64x64",
-        href: "/images/favicon-64x64.ico",
+        rel: 'icon',
+        type: 'image/x-icon',
+        sizes: '64x64',
+        href: '/images/favicon-64x64.ico',
       },
     ],
     [
-      "link",
+      'link',
       {
-        rel: "icon",
-        type: "image/x-icon",
-        sizes: "96x96",
-        href: "/images/favicon-96x96.ico",
+        rel: 'icon',
+        type: 'image/x-icon',
+        sizes: '96x96',
+        href: '/images/favicon-96x96.ico',
       },
     ],
     [
-      "link",
+      'link',
       {
-        rel: "icon",
-        type: "image/x-icon",
-        sizes: "128x128",
-        href: "/images/favicon-128x128.ico",
+        rel: 'icon',
+        type: 'image/x-icon',
+        sizes: '128x128',
+        href: '/images/favicon-128x128.ico',
       },
     ],
 
     /* PWA */
     /* iOS(Safari) */
-    ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
+    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     [
-      "meta",
-      { name: "apple-mobile-web-app-status-bar-style", content: "black" },
+      'meta',
+      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
     ],
     [
-      "link",
+      'link',
       {
-        rel: "apple-touch-icon",
-        sizes: "57x57",
-        href: "/images/apple-icon-57x57.png",
+        rel: 'apple-touch-icon',
+        sizes: '57x57',
+        href: '/images/apple-icon-57x57.png',
       },
     ],
     [
-      "link",
+      'link',
       {
-        rel: "apple-touch-icon",
-        sizes: "60x60",
-        href: "/images/apple-icon-60x60.png",
+        rel: 'apple-touch-icon',
+        sizes: '60x60',
+        href: '/images/apple-icon-60x60.png',
       },
     ],
     [
-      "link",
+      'link',
       {
-        rel: "apple-touch-icon",
-        sizes: "72x72",
-        href: "/images/apple-icon-72x72.png",
+        rel: 'apple-touch-icon',
+        sizes: '72x72',
+        href: '/images/apple-icon-72x72.png',
       },
     ],
     [
-      "link",
+      'link',
       {
-        rel: "apple-touch-icon",
-        sizes: "76x76",
-        href: "/images/apple-icon-76x76.png",
+        rel: 'apple-touch-icon',
+        sizes: '76x76',
+        href: '/images/apple-icon-76x76.png',
       },
     ],
     [
-      "link",
+      'link',
       {
-        rel: "apple-touch-icon",
-        sizes: "114x114",
-        href: "/images/apple-icon-114x114.png",
+        rel: 'apple-touch-icon',
+        sizes: '114x114',
+        href: '/images/apple-icon-114x114.png',
       },
     ],
     [
-      "link",
+      'link',
       {
-        rel: "apple-touch-icon",
-        sizes: "120x120",
-        href: "/images/apple-icon-120x120.png",
+        rel: 'apple-touch-icon',
+        sizes: '120x120',
+        href: '/images/apple-icon-120x120.png',
       },
     ],
     [
-      "link",
+      'link',
       {
-        rel: "apple-touch-icon",
-        sizes: "144x144",
-        href: "/images/apple-icon-144x144.png",
+        rel: 'apple-touch-icon',
+        sizes: '144x144',
+        href: '/images/apple-icon-144x144.png',
       },
     ],
     [
-      "link",
+      'link',
       {
-        rel: "apple-touch-icon",
-        sizes: "152x152",
-        href: "/images/apple-icon-152x152.png",
+        rel: 'apple-touch-icon',
+        sizes: '152x152',
+        href: '/images/apple-icon-152x152.png',
       },
     ],
     [
-      "link",
+      'link',
       {
-        rel: "apple-touch-icon",
-        sizes: "180x180",
-        href: "/images/apple-icon-180x180.png",
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/images/apple-icon-180x180.png',
       },
     ],
     /* Android */
     [
-      "link",
+      'link',
       {
-        rel: "icon",
-        type: "image/png",
-        sizes: "192x192",
-        href: "/images/android-icon-192x192.png",
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '192x192',
+        href: '/images/android-icon-192x192.png',
       },
     ],
     /* IE, Microsoft Edge */
     [
-      "link",
-      { rel: "mask-icon", href: "/images/favicon.svg", color: "#42b983" },
+      'link',
+      { rel: 'mask-icon', href: '/images/favicon.svg', color: '#42b983' },
     ],
     [
-      "meta",
+      'meta',
       {
-        name: "msapplication-TileImage",
-        content: "/images/favicon-508x508.png",
+        name: 'msapplication-TileImage',
+        content: '/images/favicon-508x508.png',
       },
     ],
-    ["meta", { name: "msapplication-TileColor", content: "#000000" }],
+    ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
 
     /* KaTeX CSS CDN*/
     [
-      "link",
+      'link',
       {
-        rel: "stylesheet",
-        href: "https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css",
+        rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css',
       },
     ],
 
     /* Google AdSense */
     [
-      "script",
+      'script',
       {
-        "data-ad-client": "ca-pub-1130344085482597",
-        async: "async",
-        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+        'data-ad-client': 'ca-pub-1130344085482597',
+        async: 'async',
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
       },
     ],
 
     /* Google Search Console */
     [
-      "meta",
+      'meta',
       {
-        name: "google-site-verification",
+        name: 'google-site-verification',
         content: process.env.GoogleSiteVerification,
       },
     ],
 
     /* 百度搜索资源平台HTML标签验证 */
-    ["meta", { name: "baidu-site-verification", content: "7avnmfX31j" }],
+    ['meta', { name: 'baidu-site-verification', content: '7avnmfX31j' }],
   ],
-  theme: "reco",
+  theme: 'reco',
   themeConfig,
 
   markdown: {
@@ -211,28 +211,28 @@ module.exports = {
     extendMarkdown: (md) => {
       /* 使用更多的 markdown-it 插件! */
       /* https://github.com/iktakahiro/markdown-it-katex */
-      md.use(require("@iktakahiro/markdown-it-katex"));
+      md.use(require('@iktakahiro/markdown-it-katex'))
       /* https://github.com/gmunguia/markdown-it-plantuml*/
-      md.use(require("markdown-it-plantuml"));
+      md.use(require('markdown-it-plantuml'))
     },
   },
   plugins: [
     [
-      "@vuepress/pwa",
+      '@vuepress/pwa',
       {
         serviceWorker: true,
         updatePopup: {
-          message: "发现新内容可用",
-          buttonText: "刷新",
+          message: '发现新内容可用',
+          buttonText: '刷新',
         },
       },
     ],
 
     /* https://github.com/francoischalifour/medium-zoom */
     [
-      "@vuepress/medium-zoom",
+      '@vuepress/medium-zoom',
       {
-        selector: ".theme-reco-content img:not(.zoom-unable)",
+        selector: '.theme-reco-content img:not(.zoom-unable)',
         options: {
           margin: 16,
         },
@@ -241,17 +241,17 @@ module.exports = {
 
     /* https://github.com/moefyit/vuepress-plugin-meting */
     [
-      "meting",
+      'meting',
       {
         meting: {
-          server: "netease",
-          type: "playlist",
-          mid: "3147691749",
+          server: 'netease',
+          type: 'playlist',
+          mid: '3147691749',
         },
         /* https://aplayer.js.org/#/zh-Hans/ */
         aplayer: {
           fixed: true,
-          order: "random",
+          order: 'random',
           autoplay: false,
         },
         mobile: {
@@ -262,42 +262,42 @@ module.exports = {
 
     /* https://github.com/moefyit/vuepress-plugin-dynamic-title */
     [
-      "dynamic-title",
+      'dynamic-title',
       {
-        showText: "(/≧▽≦/)咦！又好了！",
-        hideText: "(●—●)喔哟，崩溃啦！",
+        showText: '(/≧▽≦/)咦！又好了！',
+        hideText: '(●—●)喔哟，崩溃啦！',
         recoverTime: 2000,
       },
     ],
 
     /* https://github.com/ulivz/vuepress-plugin-flowchart */
-    "flowchart",
-    "@vuepress/nprogress",
+    'flowchart',
+    '@vuepress/nprogress',
     [
-      "sitemap",
+      'sitemap',
       {
         hostname: process.env.SitemapHostname,
       },
     ],
     /* https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-last-updated.html */
     [
-      "@vuepress/last-updated",
+      '@vuepress/last-updated',
       {
         transformer: (timestamp, lang) => {
           /* https://momentjs.com */
-          const moment = require("moment");
-          moment.locale(lang);
+          const moment = require('moment')
+          moment.locale(lang)
           /* https://www.w3.org/TR/NOTE-datetime */
-          return moment(timestamp).format("YYYY-MM-DD HH:mm:ss");
+          return moment(timestamp).format('YYYY-MM-DD HH:mm:ss')
         },
-      }
+      },
     ],
     /* https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-google-analytics.html */
     [
-      "@vuepress/google-analytics",
+      '@vuepress/google-analytics',
       {
         ga: process.env.GoogleAnalyticsID,
       },
-    ]
-  ]
+    ],
+  ],
 }

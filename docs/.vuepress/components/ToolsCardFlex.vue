@@ -9,8 +9,18 @@
       <a :href="item.url" target="_blank" :title="item.description">
         <div class="tools-card-info">
           <div class="tools-card-title">
-            <img :src="item.logoMiniPath" v-show="showMiniLogo" height="30" class="zoom-unable" />
-            <img :src="item.logoPath" v-show="!showMiniLogo" height="30" class="zoom-unable" />
+            <img
+              :src="item.logoMiniPath"
+              v-show="showMiniLogo"
+              height="30"
+              class="zoom-unable"
+            />
+            <img
+              :src="item.logoPath"
+              v-show="!showMiniLogo"
+              height="30"
+              class="zoom-unable"
+            />
             <div class="tools-card-name">{{ item.name }}</div>
           </div>
           <div class="tools-card-description">{{ item.description }}</div>

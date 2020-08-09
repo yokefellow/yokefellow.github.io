@@ -1,9 +1,7 @@
 ---
 home: true
 bgImage: '/images/banner-1366x450.jpg'
-bgImageStyle: {
-  height: 'auto'
-}
+bgImageStyle: { height: 'auto' }
 # faceImage: '/head.png'
 # heroImage: /hero_write.png
 # heroImageStyle: {

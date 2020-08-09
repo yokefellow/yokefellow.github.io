@@ -23,7 +23,7 @@ jobs:
       # 生成静态文件
       - name: Install and Build Static Files 🔧
         # 获取在Repo设置的Secret（Client ID、Client Secret）
-        env: 
+        env:
           # Vssue Config
           Platform: github
           Owner: yokefellow
@@ -64,7 +64,7 @@ jobs:
       # 重新生成静态文件
       - name: Reinstall and Rebuild Static Files 🔧
         # 获取在Repo设置的Secret（Client ID、Client Secret）
-        env: 
+        env:
           # Vssue Config
           Platform: gitee
           Owner: yokefellow
@@ -79,7 +79,7 @@ jobs:
           GoogleAnalyticsID: UA-173603129-2
         run: |
           yarn install 
-          yarn run build 
+          yarn run build
 
       # 将静态文件和源码同步到 Gitee Pages
       - name: Sync Gitee Pages 🌀
@@ -89,7 +89,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
         with:
           # 替换为你的 Gitee Pages 仓库地址
-          gitee_repo: "git@gitee.com:yokefellow/yokefellow.git"
+          gitee_repo: 'git@gitee.com:yokefellow/yokefellow.git'
           folder: dist
           git_user_email: 1241900094@qq.com
           git_user_name: yokefellow
