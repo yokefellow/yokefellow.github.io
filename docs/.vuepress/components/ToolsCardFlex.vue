@@ -1,15 +1,16 @@
 <template>
   <div class="tools-card-flex-container">
     <div class="tools-card-item" v-for="item in toolsArray" ref="item">
-      <div class="tools-card-tag" 
+      <div
+        class="tools-card-tag"
         v-if="item.tag"
-        :style="{backgroundImage: 'url(' + item.tag + ')' }">
-      </div>
+        :style="{ backgroundImage: 'url(' + item.tag + ')' }"
+      ></div>
       <a :href="item.url" target="_blank" :title="item.description">
         <div class="tools-card-info">
           <div class="tools-card-title">
-            <img :src="item.logoMiniPath" v-show="showMiniLogo" height="30" class="zoom-unable"/>
-            <img :src="item.logoPath" v-show="!showMiniLogo" height="30" class="zoom-unable"/>
+            <img :src="item.logoMiniPath" v-show="showMiniLogo" height="30" class="zoom-unable" />
+            <img :src="item.logoPath" v-show="!showMiniLogo" height="30" class="zoom-unable" />
             <div class="tools-card-name">{{ item.name }}</div>
           </div>
           <div class="tools-card-description">{{ item.description }}</div>
@@ -21,12 +22,12 @@
 
 <script>
 export default {
-  name: "ToolsCardFlex",
+  name: 'ToolsCardFlex',
   props: {
     configFilePath: {
       required: true,
       type: String,
-    }
+    },
   },
   data() {
     return {
@@ -37,31 +38,25 @@ export default {
   },
   mounted() {
     this.toolsCardItemWidth = this.$refs.item[0].clientWidth
-    window.addEventListener("resize", this.getToolsCardItemWidth)
+    window.addEventListener('resize', this.getToolsCardItemWidth)
   },
-  // created() {
-  //   window.addEventListener("resize", this.getToolsCardItemWidth)
-  // },
-  // destroyed() {
-  //   window.removeEventListener("resize", this.getToolsCardItemWidth)
-  // },
   watch: {
     toolsCardItemWidth() {
       this.changeLogoType(this.toolsCardItemWidth)
-    } 
+    },
   },
   methods: {
     getToolsCardItemWidth() {
       this.toolsCardItemWidth = this.$refs.item[0].clientWidth
     },
     changeLogoType(toolsCardItemWidth) {
-      if(toolsCardItemWidth > 240){
+      if (toolsCardItemWidth > 240) {
         this.showMiniLogo = false
       } else {
         this.showMiniLogo = true
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -72,21 +67,24 @@ export default {
   flex-wrap: wrap;
 
   .tools-card-item {
-    position relative
+    position: relative;
     min-width: 170px;
     background-color: var(--background-color);
+
     a {
       text-decoration: none !important;
     }
-    .tools-card-tag{
-      height 28px
-      width 28px
-      position absolute
-      right -8px
-      top -8px
-      background no-repeat
-      background-size 28px
+
+    .tools-card-tag {
+      height: 28px;
+      width: 28px;
+      position: absolute;
+      right: -8px;
+      top: -8px;
+      background: no-repeat;
+      background-size: 28px;
     }
+
     .tools-card-info {
       border-radius: 0.25rem;
       padding: 5px;
@@ -101,10 +99,11 @@ export default {
         height: 30px;
         line-height: 30px;
         margin: 5px;
+
         .tools-card-name {
-          font-size: 12px
+          font-size: 12px;
           float: right;
-          margin-right: 5px
+          margin-right: 5px;
         }
       }
 
@@ -159,7 +158,6 @@ export default {
   }
 }
 
-
 @media screen and (min-width: 721px) and (max-width: 1024px) {
   .tools-card-flex-container {
     .tools-card-item {
@@ -186,5 +184,4 @@ export default {
     }
   }
 }
-
 </style>

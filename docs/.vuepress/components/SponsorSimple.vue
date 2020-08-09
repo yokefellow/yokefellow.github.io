@@ -1,30 +1,28 @@
 <template>
   <div class="sponsor-container">
-    <div class="sponsor-layout">
-      <div class="sponsor-love position-absolute transition-3ms" :class="{blurry: isBlurry}">Sponsor</div>
-      <a
-        class="sponsor-github position-absolute transition-3ms"
-        :class="{blurry: isBlurry}"
-        href="https://github.com/yokefellow/vuepress-plugin-sponsor"
-        target="_blank"
-        title="Github">
-      </a>
-      <ul class="sponsor-payment-options transition-3ms" :class="{blurry: isBlurry}">
-        <li id="alipay-option" class="transition-3ms" @click="showQRCode(alipayQR,'支付宝')"></li>
-        <li id="wechat-option" class="transition-3ms" @click="showQRCode(wechatQR,'微信支付')"></li>
-        <li id="qq-option" class="transition-3ms" @click="showQRCode(qqQR,'QQ支付')"></li>
-        <li id="paypal-option" class="transition-3ms" @click="jumpToNewTab(paypalURL,'PayPal')"></li>
-      </ul>
-    </div>
+    <div class="sponsor-love position-absolute transition-3ms" :class="{blurry: isBlurry}">Sponsor</div>
+    <a
+      class="sponsor-github position-absolute transition-3ms"
+      :class="{blurry: isBlurry}"
+      href="https://github.com/yokefellow/vuepress-plugin-sponsor"
+      target="_blank"
+      title="Github"
+    ></a>
+    <ul class="sponsor-payment-options transition-3ms" :class="{blurry: isBlurry}">
+      <li id="alipay-option" class="transition-3ms" @click="showQRCode(alipayQR,'支付宝')"></li>
+      <li id="wechat-option" class="transition-3ms" @click="showQRCode(wechatQR,'微信支付')"></li>
+      <li id="qq-option" class="transition-3ms" @click="showQRCode(qqQR,'QQ支付')"></li>
+      <li id="paypal-option" class="transition-3ms" @click="jumpToNewTab(paypalURL,'PayPal')"></li>
+    </ul>
     <transition name="fade-qrcode-container">
-      <div class="sponsor-qrcode-container position-absolute" v-show="isShowQRCodeContainer">
+      <div class="sponsor-qrcode-container position-absolute" v-show="isShowQRContainer">
         <transition name="fade-qrcode">
           <div
             class="sponsor-qrcode-info"
-            :style="{backgroundImage: 'url(' + currentQRCode + ')'}"
+            :style="{backgroundImage: 'url(' + currentQRCode + ')', pointerEvents: isShowQRCode? 'auto':'none'}"
             @click="closeQRCode()"
-            v-show="isShowQRCode">
-          </div>
+            v-show="isShowQRCode"
+          ></div>
         </transition>
       </div>
     </transition>
@@ -36,24 +34,24 @@
 
 <script>
 export default {
-  name: "SponsorSimple",
+  name: 'SponsorSimple',
   props: {
     sponsorConfig: {
       required: false,
       type: Object,
       default() {
         return {
-          theme: "simple",
-          // alipay: "./sponsor-logo/qrcode-alipay.png",
-          alipay: "",
-          wechat: "/sponsor-qrcode/qrcode-wechat.png",
-          qq: "/sponsor-qrcode/qrcode-qq.png",
+          theme: 'simple',
+          // alipay: "/sponsor-logo/qrcode-alipay.png",
+          alipay: null,
+          wechat: '/sponsor-qrcode/qrcode-wechat.png',
+          qq: '/sponsor-qrcode/qrcode-qq.png',
           // paypal: "https://www.paypal.me/yokefellow",
-          paypal: "",
-          duration: 1500
+          paypal: null,
+          duration: 1500,
         }
-      }
-    }
+      },
+    },
   },
   data() {
     return {
@@ -62,46 +60,48 @@ export default {
       qqQR: this.sponsorConfig.qq,
       paypalURL: this.sponsorConfig.paypal,
       messageDuration: this.sponsorConfig.duration,
-      currentQRCode: "",
-      message: "",
+      currentQRCode: '',
+      message: '',
+      isShowMessage: false,
       isBlurry: false,
+      isShowQRContainer: false,
       isShowQRCode: false,
-      isShowQRCodeContainer: false,
-      isShowMessage: false
     }
   },
   methods: {
-    showQRCode(url,msg) {
-      if(!url){
-        return this.showMessage(msg)
-      }
+    showQRCode(path, name) {
       this.isShowMessage = false
-      this.currentQRCode = url
+      if (!path) {
+        return this.showMessage(name)
+      }
       this.isBlurry = true
-      this.isShowQRCodeContainer = true
+      this.currentQRCode = path
+      this.isShowQRContainer = true
       this.isShowQRCode = true
     },
-    jumpToNewTab(url,msg) {
-      if(!url){
-        return this.showMessage(msg)
+    jumpToNewTab(url, name) {
+      if (!url) {
+        return this.showMessage(name)
       }
-      window.open(url, "_blank")
+      window.open(url, '_blank')
+    },
+    showMessage(name) {
+      this.message = `主人忘记设置${name}啦`
+      if (!this.isShowMessage) {
+        this.isShowMessage = true
+        setTimeout(() => {
+          this.isShowMessage = false
+        }, this.messageDuration)
+      }
     },
     closeQRCode() {
       this.isShowQRCode = false
       setTimeout(() => {
-        this.isShowQRCodeContainer = false
+        this.isShowQRContainer = false
         this.isBlurry = false
-      },600)
+      }, 600)
     },
-    showMessage(msg) {
-      this.message = `主人忘记设置${msg}啦`
-      this.isShowMessage = true,
-      setTimeout(() => {
-        this.isShowMessage = false
-      },this.messageDuration)
-    }
-  }
+  },
 }
 </script>
 
@@ -139,106 +139,100 @@ export default {
     -o-transition: all 0.3s;
   }
 
-  .sponsor-layout {
-    margin: 80px 0;
-    position: relative;
-    z-index: 0
+  .sponsor-love {
+    font-size: 12px;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    color: #fff;
+    background: url('./sponsor-logo/love.svg') #ffd886 no-repeat center 10px;
+    background-size: 20px;
+    border-radius: 35px;
+    text-align: center;
+    left: calc(50% - 120px);
+    top: calc(50% - 60px);
+    transform: rotatez(-15deg);
+    -ms-transform: rotatez(-15deg);
+    -moz-transform: rotatez(-15deg);
+    -webkit-transform: rotatez(-15deg);
+    -o-transform: rotatez(-15deg);
+  }
 
-    .sponsor-love {
-      font-size: 12px;
-      width: 70px;
-      height: 70px;
-      line-height: 70px;
-      color: #fff;
-      background: url('./sponsor-logo/love.svg') #ffd886 no-repeat center 10px;
+  .sponsor-github {
+    display: block;
+    width: 24px;
+    height: 24px;
+    right: -8px;
+    left: calc(50% + 135px);
+    top: calc(50% - 30px);
+    background: url('./sponsor-logo/github.svg') no-repeat center center;
+    background-size: contain;
+    opacity: 0.3;
+    transform: rotatez(15deg);
+    -ms-transform: rotatez(15deg);
+    -moz-transform: rotatez(15deg);
+    -webkit-transform: rotatez(15deg);
+    -o-transform: rotatez(15deg);
+  }
+
+  .sponsor-payment-options {
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    height: 28px;
+    z-index: 1;
+
+    li {
+      width: 74px;
+      border-left: 1px solid #ddd;
+      background: no-repeat center center;
+      background-color: rgba(204, 217, 220, 0.1);
+      background-size: 45px;
+      cursor: pointer;
+      -webkit-filter: grayscale(1);
+      filter: grayscale(1);
+      opacity: 0.5;
+
+      &:hover {
+        background-color: rgba(204, 217, 220, 0.3);
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
+        opacity: 1;
+      }
+
+      &:first-child {
+        border-width: 0;
+      }
+    }
+
+    #alipay-option {
+      background-image: url('./sponsor-logo/alipay.svg');
+    }
+
+    #wechat-option {
+      background-image: url('./sponsor-logo/wechat.svg');
+    }
+
+    #qq-option {
+      background-image: url('./sponsor-logo/qq.svg');
       background-size: 20px;
-      border-radius: 35px;
-      text-align: center;
-      left: 30px;
-      top: calc(50% - 60px);
-      z-index: -1;
-      transform: rotatez(-15deg);
-      -ms-transform: rotatez(-15deg);
-      -moz-transform: rotatez(-15deg);
-      -webkit-transform: rotatez(-15deg);
-      -o-transform: rotatez(-15deg);
     }
 
-    .sponsor-github {
-      display: block;
-      width: 24px;
-      height: 24px;
-      right: -8px;
-      top: calc(50% - 30px);
-      background: url('./sponsor-logo/github.svg') no-repeat center center;
-      background-size: contain;
-      opacity: 0.3;
-      z-index: -1;
-      transform: rotatez(15deg);
-      -ms-transform: rotatez(15deg);
-      -moz-transform: rotatez(15deg);
-      -webkit-transform: rotatez(15deg);
-      -o-transform: rotatez(15deg);
-    }
-
-    .sponsor-payment-options {
-      display: flex
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      height: 28px;
-      z-index: 1;
-
-      li {
-        width: 74px;
-        border-left: 1px solid #ddd;
-        background: no-repeat center center;
-        background-color: rgba(204, 217, 220, 0.1);
-        background-size: 45px;
-        cursor: pointer;
-        -webkit-filter: grayscale(1);
-        filter: grayscale(1);
-        opacity: 0.5;
-
-        &:hover {
-          background-color: rgba(204, 217, 220, 0.3);
-          -webkit-filter: grayscale(0);
-          filter: grayscale(0);
-          opacity: 1;
-        }
-
-        &:first-child {
-          border-width: 0;
-        }
-      }
-
-      #alipay-option {
-        background-image: url('./sponsor-logo/alipay.svg');
-      }
-
-      #wechat-option {
-        background-image: url('./sponsor-logo/wechat.svg');
-      }
-
-      #qq-option {
-        background-image: url('./sponsor-logo/qq.svg');
-        background-size: 20px;
-      }
-
-      #paypal-option {
-        background-image: url('./sponsor-logo/paypal.svg');
-      }
+    #paypal-option {
+      background-image: url('./sponsor-logo/paypal.svg');
     }
   }
 
   .sponsor-qrcode-container {
+    width: 100%;
     height: 100%;
     z-index: 1;
     perspective: 400px;
-    transition: opacity .3s;
-    -moz-transition: opacity .3s;
-    -webkit-transition: opacity .3s;
-    -o-transition: opacity .3s;
+    transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -webkit-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
 
     .sponsor-qrcode-info {
       cursor: pointer;
@@ -266,13 +260,14 @@ export default {
       overflow: hidden;
     }
   }
+
   .sponsor-message {
-    bottom: 36px;
+    bottom: -36px;
     border-radius: 6px;
-    background-color: rgba(100,100,100,0.8);
+    background-color: rgba(100, 100, 100, 0.8);
     padding: 0 6px;
     font-size: 12px;
-    text-align: center
+    text-align: center;
     height: 24px;
     line-height: 24px;
     color: #fff;
@@ -344,7 +339,6 @@ export default {
   }
 }
 
-
 .fade-qrcode-container-enter, .fade-qrcode-container-leave-to {
   opacity: 0;
 }
@@ -367,7 +361,7 @@ export default {
   -webkit-animation: hide-qrcode 0.5s ease-in-out 0s 1 normal forwards;
 }
 
-.fade-message-enter-active, .fade-message-leave-active{
+.fade-message-enter-active, .fade-message-leave-active {
   transition: opacity 0.3s;
   -moz-transition: opacity 0.3s;
   -webkit-transition: opacity 0.3s;

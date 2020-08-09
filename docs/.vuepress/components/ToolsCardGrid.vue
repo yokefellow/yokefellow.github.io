@@ -1,7 +1,7 @@
 <template>
   <div class="tools-card-grid-container">
     <div class="tools-card-item" v-for="item in toolsArray" ref="item">
-      <div class="tools-card-tag" 
+      <div class="tools-card-tag"
         v-if="item.tag"
         :style="{backgroundImage: 'url(' + item.tag + ')' }">
       </div>
@@ -48,16 +48,10 @@ export default {
     this.toolsCardItemWidth = this.$refs.item[0].clientWidth
     window.addEventListener("resize", this.getToolsCardItemWidth)
   },
-  // created() {
-  //   window.addEventListener("resize", this.getToolsCardItemWidth)
-  // },
-  // destroyed() {
-  //   window.removeEventListener("resize", this.getToolsCardItemWidth)
-  // },
   watch: {
     toolsCardItemWidth() {
       this.changeLogoType(this.toolsCardItemWidth)
-    } 
+    }
   },
   methods: {
     getToolsCardItemWidth() {
