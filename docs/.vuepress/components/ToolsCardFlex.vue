@@ -1,11 +1,7 @@
 <template>
   <div class="tools-card-flex-container">
     <div class="tools-card-item" v-for="item in toolsArray" ref="item">
-      <div
-        class="tools-card-tag"
-        v-if="item.tag"
-        :style="{ backgroundImage: 'url(' + item.tag + ')' }"
-      ></div>
+      <div class="tools-card-tag" v-if="item.tag" :class="item.tag"></div>
       <a :href="item.url" target="_blank" :title="item.description">
         <div class="tools-card-info">
           <div class="tools-card-title">
@@ -93,7 +89,20 @@ export default {
       top: -8px;
       background: no-repeat;
       background-size: 28px;
+
+      &.no-more-updates {
+        background-image: url("./tools-tag/no-more-updates.svg")
+      }
+
+      &.outdated {
+        background-image: url("./tools-tag/outdated.svg")
+      }
+
+      &.recommendable {
+        background-image: url("./tools-tag/recommendable.svg")
+      }
     }
+
 
     .tools-card-info {
       border-radius: 0.25rem;

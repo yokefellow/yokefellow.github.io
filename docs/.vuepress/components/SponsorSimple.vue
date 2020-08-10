@@ -142,6 +142,7 @@ export default {
   display: flex;
   justify-content: center;
   position: relative;
+  margin: 100px 0;
 
   a {
     color: #000;

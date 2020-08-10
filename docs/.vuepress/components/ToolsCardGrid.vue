@@ -1,11 +1,7 @@
 <template>
   <div class="tools-card-grid-container">
     <div class="tools-card-item" v-for="item in toolsArray" ref="item">
-      <div
-        class="tools-card-tag"
-        v-if="item.tag"
-        :style="{ backgroundImage: 'url(' + item.tag + ')' }"
-      ></div>
+      <div class="tools-card-tag" v-if="item.tag" :class="item.tag"></div>
       <a :href="item.url" target="_blank" :title="item.description">
         <div class="tools-card-info">
           <div class="tools-card-title">
@@ -72,58 +68,74 @@ export default {
 
 <style lang="stylus" scoped>
 .tools-card-grid-container {
-  margin 18px 6px
-  display grid
-  grid-template-columns repeat(auto-fill,minmax(170px ,1fr))
-  grid-row-gap 20px
-  grid-column-gap 20px
+  margin: 18px 6px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
 
   .tools-card-item {
-    position relative
-    background-color var(--background-color)
+    position: relative;
+    background-color: var(--background-color);
+
     a {
-      text-decoration none !important
+      text-decoration: none !important;
     }
-    .tools-card-tag{
-      height 28px
-      width 28px
-      position absolute
-      right -8px
-      top -8px
-      background no-repeat
-      background-size 28px
+
+    .tools-card-tag {
+      height: 28px;
+      width: 28px;
+      position: absolute;
+      right: -8px;
+      top: -8px;
+      background: no-repeat;
+      background-size: 28px;
+
+      &.no-more-updates {
+        background-image: url("./tools-tag/no-more-updates.svg")
+      }
+
+      &.outdated {
+        background-image: url("./tools-tag/outdated.svg")
+      }
+
+      &.recommendable {
+        background-image: url("./tools-tag/recommendable.svg")
+      }
     }
+
     .tools-card-info {
-      border-radius 0.25rem
-      padding 5px
-      box-shadow var(--box-shadow)
-      transition all 0.3s
+      border-radius: 0.25rem;
+      padding: 5px;
+      box-shadow: var(--box-shadow);
+      transition: all 0.3s;
 
       &:hover {
-        box-shadow: var(--box-shadow-hover)
+        box-shadow: var(--box-shadow-hover);
       }
 
       .tools-card-title {
-        height 30px
-        line-height 30px
-        margin 5px
+        height: 30px;
+        line-height: 30px;
+        margin: 5px;
+
         .tools-card-name {
-          font-size 12px
-          float right
-          margin-right 5px
+          font-size: 12px;
+          float: right;
+          margin-right: 5px;
         }
       }
 
       .tools-card-description {
-        display -webkit-box
-        text-overflow ellipsis
-        overflow hidden
-        font-size 14px
-        height 36px
-        margin 0 5px 5px 5px
-        line-clamp: 2
-        -webkit-line-clamp 2
-        -webkit-box-orient vertical
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 14px;
+        height: 36px;
+        margin: 0 5px 5px 5px;
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
       }
     }
   }
