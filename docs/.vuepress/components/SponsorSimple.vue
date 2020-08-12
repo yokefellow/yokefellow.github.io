@@ -93,19 +93,24 @@ export default {
       paypalURL: this.sponsorConfig.paypal,
       messageDuration: this.sponsorConfig.duration,
       currentQRCode: '',
-      message: '',
+      currentMessageName: '',
       isShowMessage: false,
       isBlurry: false,
       isShowQRContainer: false,
       isShowQRCode: false,
     }
   },
+  computed: {
+    message() {
+      return `主人忘记设置${this.currentMessageName}啦`
+    }
+  },
   methods: {
     showQRCode(path, name) {
-      this.isShowMessage = false
       if (!path) {
         return this.showMessage(name)
       }
+      this.isShowMessage = false
       this.isBlurry = true
       this.currentQRCode = path
       this.isShowQRContainer = true
@@ -118,7 +123,7 @@ export default {
       window.open(url, '_blank')
     },
     showMessage(name) {
-      this.message = `主人忘记设置${name}啦`
+      this.currentMessageName = name
       if (!this.isShowMessage) {
         this.isShowMessage = true
         setTimeout(() => {
