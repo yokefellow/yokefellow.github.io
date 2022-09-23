@@ -31,7 +31,7 @@ jobs:
           ClientID: ${{ secrets.VSSUE_CLIENT_ID }}
           ClientSecret: ${{ secrets.VSSUE_CLIENT_SECRET }}
           #Google Analytics Config
-          GoogleAnalyticsID: UA-173603129-1
+          GoogleAnalyticsID: G-H4CPPTTMRB
         run: |
           yarn install
           yarn run build
@@ -41,7 +41,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3.6.4
         with:
           personal_token: ${{ secrets.ACCESS_TOKEN }}
-          publish_branch: master
+          publish_branch: main
           publish_dir: ./dist
-          commit_message: 🚀 ${{ github.event.head_commit.message }} to master from @
+          commit_message: 🚀 ${{ github.event.head_commit.message }} to main branch from @
           enable_jekyll: true
