@@ -35,7 +35,7 @@ jobs:
         run: |
           yarn install
           yarn run build
-          echo 'yokefellow.cn' > CNAME
+          echo 'yokefellow.cn' > dist/CNAME
       # 部署到 GitHub Pages
       - name: Deploy GitHub Pages 🚀
         uses: peaceiris/actions-gh-pages@v3.6.4
@@ -43,5 +43,5 @@ jobs:
           personal_token: ${{ secrets.ACCESS_TOKEN }}
           publish_branch: main
           publish_dir: ./dist
-          commit_message: 🚀 ${{ github.event.head_commit.message }} to main branch from @
+          commit_message: ${{ github.event.head_commit.message }} to main branch from @
           enable_jekyll: true
