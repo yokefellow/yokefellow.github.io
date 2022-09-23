@@ -1,0 +1,47 @@
+name: Deploy Pages
+
+# 触发条件：在 push 到 gh-page-source 分支后
+on:
+  push:
+    branches:
+      - gh-page-source
+
+# 任务
+jobs:
+  # https://github.com/JamesIves/github-pages-deploy-action
+  build-and-deploy:
+    name: Deploy GitHub Pages
+    # 服务器环境： Ubuntu（最新版）
+    runs-on: ubuntu-latest
+    steps:
+      # 拉取代码
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      # 生成静态文件
+      - name: Install and Build Static Files 🔧
+        # 获取在Repo设置的Secret（Client ID、Client Secret）
+        env:
+          # Vssue Config
+          Platform: github
+          Owner: yokefellow
+          Repo: yokefellow.github.io
+          ClientID: ${{ secrets.VSSUE_CLIENT_ID }}
+          ClientSecret: ${{ secrets.VSSUE_CLIENT_SECRET }}
+          #Google Analytics Config
+          GoogleAnalyticsID: UA-173603129-1
+        run: |
+          yarn install
+          yarn run build
+          echo 'yokefellow.cn' > CNAME
+      # 部署到 GitHub Pages
+      - name: Deploy GitHub Pages 🚀
+        uses: peaceiris/actions-gh-pages@v3.6.4
+        with:
+          personal_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_branch: master
+          publish_dir: ./dist
+          commit_message: 🚀 ${{ github.event.head_commit.message }} to master from @
+          enable_jekyll: true

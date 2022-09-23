@@ -1,0 +1,73 @@
+$signature-font = 'en-s.ttf'
+$logo-font = 'No.025-Sounso-Warm-2.ttf'
+$Rastano-font = 'Rastano-3.ttf'
+$Dodge-Rabbit-font = 'BY-Dodge-Rabbit-2.ttf'
+
+@font-face {
+  font-family: $signature-font
+  src: url("/fonts/" + $signature-font );
+}
+
+@font-face {
+  font-family: $logo-font
+  src: url("/fonts/" + $logo-font );
+}
+
+@font-face {
+  font-family: $Rastano-font
+  src: url("/fonts/" + $Rastano-font );
+}
+
+@font-face {
+  font-family: $Dodge-Rabbit-font
+  src: url("/fonts/" + $Dodge-Rabbit-font );
+}
+
+.home-blog
+  .hero
+    div
+      color #FFBB00
+      h1
+        margin 2.5rem 0 !important
+      .description
+        margin 1.8rem 1rem !important
+      // 标题、描述文字渐变
+      h1, .description
+        font-family: $Rastano-font
+        background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+// 修改深色主题背景
+html.dark
+  .home-blog
+    .hero
+      background-image url('/images/banner-galaxy.jpg') !important
+      div
+        h1, .description
+          background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
+// APlayer(vuepress-plugin-meting)
+.aplayer
+  background-color var(--background-color) !important
+  .aplayer-body, .aplayer-list li
+    background-color var(--background-color) !important
+  &.aplayer-arrow .aplayer-body
+    background-color transparent !important
+  .aplayer-list
+    border 1px solid var(--border-color) !important
+  .aplayer-info, .aplayer-list li
+    border-top-color var(--border-color) !important
+  .aplayer-list-title, .aplayer-title
+    color var(--text-color) !important
+
+// 字体
+.navbar
+  span.site-name
+    font-family $logo-font
+    font-weight normal;
+    font-size 1.6rem;
+    padding-top .2rem;
+
+.reco-account span,
+.personal-info-wrapper  h3.name
+   font-family $signature-font
+   color var(--text-color)
