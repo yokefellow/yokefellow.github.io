@@ -1,0 +1,31 @@
+{
+  "name": "yokefellow.cn",
+  "version": "1.0.1",
+  "author": "Yokefellow <minghui.yuan.dev@gmail.com>",
+  "repository": "https://github.com/yokefellow/yokefellow.github.io",
+  "description": "The Source of Yokefellow Blog",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vuepress dev .",
+    "build": "vuepress build ."
+  },
+  "devDependencies": {
+    "@iktakahiro/markdown-it-katex": "^4.0.1",
+    "@vuepress/plugin-google-analytics": "^1.9.7",
+    "@vuepress/plugin-pwa": "^1.9.7",
+    "markdown-it-plantuml": "^1.4.1",
+    "moment": "^2.29.1",
+    "vuepress": "^1.9.7",
+    "vuepress-plugin-dynamic-title": "^1.0.0",
+    "vuepress-plugin-flowchart": "^1.5.0",
+    "vuepress-plugin-meting": "^0.3.1",
+    "vuepress-plugin-sitemap": "^2.3.1",
+    "vuepress-theme-reco": "1.5.7"
+  },
+
+  "resolutions": {
+    "**/vue": "~2.6.14",
+    "**/vue-server-renderer": "~2.6.14",
+    "**/vue-template-compiler": "~2.6.14"
+  }
+}
