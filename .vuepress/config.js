@@ -457,5 +457,26 @@ module.exports = {
         ga: process.env.GoogleAnalyticsID,
       },
     ],
+    [
+      // https://www.npmjs.com/package/vuepress-plugin-robots
+      'robots',
+      {
+        host: 'https://yokefellow.cn',
+
+        disallowAll: false,
+
+        allowAll: true,
+
+        sitemap: '/sitemap.xml',
+
+        policies: [
+          {
+            userAgent: '*',
+            disallow: [],
+            allow: [],
+          },
+        ],
+      },
+    ],
   ],
 }
