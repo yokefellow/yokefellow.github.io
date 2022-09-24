@@ -424,7 +424,7 @@ module.exports = {
         mobile: {
           cover: false,
         },
-        defaultCover: '/images/avatar.jpg',
+        defaultCover: '/images/avatar.png',
       },
     ],
 
