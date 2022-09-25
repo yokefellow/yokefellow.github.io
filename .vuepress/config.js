@@ -288,6 +288,7 @@ module.exports = {
         },
       ],
     },
+    subSidebar: 'auto',
     type: 'blog',
     blogConfig: {
       category: {
@@ -331,8 +332,17 @@ module.exports = {
     author: 'Yokefellow🎓',
     authorAvatar: '/images/avatar.png',
     logo: '/images/avatar.png',
+
     search: true,
     searchMaxSuggestions: 10,
+
+    // https://developer.aliyun.com/article/898797
+    // algolia: {
+    //   apiKey: '<API_KEY>',
+    //   indexName: '<INDEX_NAME>',
+    //   appId: '<APP_ID>',
+    // },
+
     lastUpdated: '上次更新',
 
     /* 备案 */
@@ -475,6 +485,16 @@ module.exports = {
             allow: [],
           },
         ],
+      },
+    ],
+    [
+      'vuepress-plugin-code-copy',
+      {
+        color: '#6666ff',
+        backgroundTransition: true,
+        backgroundColor: '#6666ff',
+        successText: '复制成功',
+        staticIcon: false,
       },
     ],
   ],
