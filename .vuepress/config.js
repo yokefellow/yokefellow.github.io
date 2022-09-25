@@ -164,9 +164,8 @@ module.exports = {
     [
       'script',
       {
-        'data-ad-client': 'ca-pub-4483317960568642',
         async: 'async',
-        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4483317960568642"',
         crossorigin: 'anonymous',
       },
     ],
