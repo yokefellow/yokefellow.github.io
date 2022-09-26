@@ -6,8 +6,8 @@
   "description": "The Source of Yokefellow Blog",
   "license": "MIT",
   "scripts": {
-    "dev": "vuepress dev .",
-    "build": "NODE_ENV=production vuepress build ."
+    "dev": "vuepress dev docs",
+    "build": "NODE_ENV=production vuepress build docs"
   },
   "devDependencies": {
     "@iktakahiro/markdown-it-katex": "^4.0.1",
