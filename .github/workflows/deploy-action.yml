@@ -33,6 +33,7 @@ jobs:
           #Google Analytics Config
           GoogleAnalyticsID: G-H4CPPTTMRB
           BaiduAnalyticsID: 63b7cd7ed343cad4ab254561e90b58c3
+          MicrosoftClarityID: dtm8jo6ac3
         run: |
           yarn install
           yarn run build
