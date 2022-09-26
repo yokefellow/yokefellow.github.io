@@ -181,6 +181,26 @@ module.exports = {
 
     /* 百度搜索资源平台HTML标签验证: https://ziyuan.baidu.com/ */
     ['meta', { name: 'baidu-site-verification', content: 'code-yaZ2ZDphaI' }],
+
+    // https://stackoverflow.com/questions/62563531/how-can-i-add-google-analytics-to-my-vuepress-website-in-accordance-with-gdpr
+    [
+      'script',
+      {
+        async: true,
+        src: `https://www.googletagmanager.com/gtag/js?id=${process.env.GoogleAnalyticsID}`,
+      },
+    ],
+    [
+      'script',
+      {},
+      `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', ${process.env.GoogleAnalyticsID});
+      `,
+    ],
   ],
 
   theme: 'reco',
@@ -437,7 +457,6 @@ module.exports = {
       },
     ],
 
-    //
     // https://github.com/francoischalifour/medium-zoom
     [
       '@vuepress/medium-zoom',
@@ -450,26 +469,30 @@ module.exports = {
     ],
     // https://github.com/ulivz/vuepress-plugin-flowchart
     'flowchart',
+
+    // https://github.com/ekoeryanto/vuepress-plugin-sitemap
     [
-      // https://github.com/ekoeryanto/vuepress-plugin-sitemap
       'sitemap',
       {
         hostname: 'https://yokefellow.cn',
       },
     ],
 
+    // https://analytics.google.com/
+    // https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-google-analytics.html
+    // 自 2023 年 7 月 1 日起，Universal Analytics 媒体资源将停止收集数据。建议您改为创建 Google Analytics（分析）4 媒体资源。
+    // [
+    //   '@vuepress/google-analytics',
+    //   {
+    //     ga: process.env.GoogleAnalyticsID,
+    //   },
+    // ],
+
+    // https://www.npmjs.com/package/vuepress-plugin-baidu-tongji
     [
-      // https://analytics.google.com/
-      // https://v1.vuepress.vuejs.org/zh/plugin/official/plugin-google-analytics.html
-      '@vuepress/google-analytics',
+      'vuepress-plugin-baidu-tongji',
       {
-        ga: process.env.GoogleAnalyticsID,
-      },
-    ],
-    [
-      'baidu-tongji',
-      {
-        hm: '63b7cd7ed343cad4ab254561e90b58c3',
+        hm: process.env.BaiduAnalyticsID,
       },
     ],
     [
@@ -493,6 +516,8 @@ module.exports = {
         ],
       },
     ],
+
+    //https://www.npmjs.com/package/vuepress-plugin-code-copy
     [
       'vuepress-plugin-code-copy',
       {

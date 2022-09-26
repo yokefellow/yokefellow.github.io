@@ -32,6 +32,7 @@ jobs:
           ClientSecret: ${{ secrets.VSSUE_CLIENT_SECRET }}
           #Google Analytics Config
           GoogleAnalyticsID: G-H4CPPTTMRB
+          BaiduAnalyticsID: 63b7cd7ed343cad4ab254561e90b58c3
         run: |
           yarn install
           yarn run build
