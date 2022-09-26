@@ -198,7 +198,7 @@ module.exports = {
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', ${'' + process.env.GoogleAnalyticsID});
+      gtag('config', '${process.env.GoogleAnalyticsID}');
       `,
     ],
   ],
