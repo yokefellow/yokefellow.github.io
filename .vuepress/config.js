@@ -367,7 +367,7 @@ module.exports = {
     // 假如文档不是放在仓库的根目录下
     // docsDir: 'docs',
     // 假如文档放在一个特定的分支下
-    docsBranch: 'gh-page-source',
+    docsBranch: 'gh-pages-source',
     editLinks: true,
     editLinkText: '兼听则明，偏信则暗。 —— 汉·王符《潜夫论·明暗》',
   },
@@ -464,6 +464,12 @@ module.exports = {
       '@vuepress/google-analytics',
       {
         ga: process.env.GoogleAnalyticsID,
+      },
+    ],
+    [
+      'baidu-tongji',
+      {
+        hm: '63b7cd7ed343cad4ab254561e90b58c3',
       },
     ],
     [
