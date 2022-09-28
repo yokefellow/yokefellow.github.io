@@ -2,27 +2,18 @@ $signature-font = 'en-s.ttf'
 $logo-font = 'No.025-Sounso-Warm-2.ttf'
 $Rastano-font = 'Rastano-3.ttf'
 $Dodge-Rabbit-font = 'BY-Dodge-Rabbit-2.ttf'
-
-@font-face {
-  font-family: $signature-font
-  src: url("/fonts/" + $signature-font );
-}
-
-@font-face {
-  font-family: $logo-font
-  src: url("/fonts/" + $logo-font );
-}
-
-@font-face {
-  font-family: $Rastano-font
-  src: url("/fonts/" + $Rastano-font );
-}
-
-@font-face {
-  font-family: $Dodge-Rabbit-font
-  src: url("/fonts/" + $Dodge-Rabbit-font );
-}
-
+@font-face
+  font-family $signature-font
+  src url('/fonts/' + $signature-font)
+@font-face
+  font-family $logo-font
+  src url('/fonts/' + $logo-font)
+@font-face
+  font-family $Rastano-font
+  src url('/fonts/' + $Rastano-font)
+@font-face
+  font-family $Dodge-Rabbit-font
+  src url('/fonts/' + $Dodge-Rabbit-font)
 .home-blog
   .hero
     div
@@ -33,10 +24,10 @@ $Dodge-Rabbit-font = 'BY-Dodge-Rabbit-2.ttf'
         margin 1.8rem 1rem !important
       // 标题、描述文字渐变
       h1, .description
-        font-family: $Rastano-font
-        background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        font-family $Rastano-font
+        background-image linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)
+        -webkit-background-clip text
+        -webkit-text-fill-color transparent
 // 修改深色主题背景
 html.dark
   .home-blog
@@ -44,7 +35,7 @@ html.dark
       background-image url('/images/banner-galaxy.jpg') !important
       div
         h1, .description
-          background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
+          background-image linear-gradient(180deg, #2af598 0%, #009efd 100%)
 // APlayer(vuepress-plugin-meting)
 .aplayer
   background-color var(--background-color) !important
@@ -58,16 +49,66 @@ html.dark
     border-top-color var(--border-color) !important
   .aplayer-list-title, .aplayer-title
     color var(--text-color) !important
-
 // 字体
 .navbar
   span.site-name
     font-family $logo-font
-    font-weight normal;
-    font-size 1.4rem;
-    padding-top .2rem;
-
-.reco-account span,
-.personal-info-wrapper  h3.name
-   font-family $signature-font
-   color var(--text-color)
+    font-weight normal
+    font-size 1.4rem
+    padding-top 0.2rem
+.reco-account span, .personal-info-wrapper h3.name
+  font-family $signature-font
+  color var(--text-color)
+// 打字机效果, https://codepen.io/stevenlei/pen/KKNBRRJ
+.home-blog
+  .hero
+    div
+      .description
+        position relative
+        white-space nowrap
+        @media (max-width 719px)
+          font-size 1.2rem
+        @media (max-width 599px)
+          font-size 0.8rem
+        &::after
+          content ''
+          display inline-block
+          position absolute
+          width 10px
+          height 2rem
+          background-color var(--accent-color)
+          border-radius 2px
+          @media (max-width 719px)
+            height 1.6rem
+            width 8px
+          @media (max-width 599px)
+            height 1.1rem
+            width 6px
+        &.ended::after
+          animation 1.1s cursor steps(2, jump-none) infinite
+        span
+          --delay 10s
+          display inline-block
+          overflow hidden
+          width 0ch
+          animation 0.1s typing ease-in-out forwards
+          animation-direction alternate
+          animation-delay var(--delay)
+@keyframes cursor
+  from
+    opacity 0
+  to
+    opacity 1
+@keyframes typing
+  from
+    width 0ch
+  to
+    width 1ch
+// FontAwesome
+@import url('/icons/fontawesome-free-6.2.0-web/css/fontawesome.min.css')
+@font-face
+  font-family 'Font Awesome 6 Free'
+  src url('/icons/fontawesome-free-6.2.0-web/webfonts/fa-solid-900.woff2') format('woff2')
+i
+  .iconfont, &.fa-solid
+    font-family 'Font Awesome 6 Free' !important

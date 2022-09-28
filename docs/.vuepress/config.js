@@ -160,11 +160,46 @@ module.exports = {
       },
     ],
 
+    // https://codepen.io/stevenlei/pen/KKNBRRJ
+    [
+      'script',
+      {},
+      `
+        window.onload = () => {
+         typingDescription();
+         ['popstate'].forEach((item,index) => {
+            window.addEventListener(item, typingDescription);
+          })
+        }
+        function typingDescription() {
+          const description = document.querySelector(".home-blog .hero div .description");
+          if(description && description.textContent) {
+            description.innerHTML = description.textContent
+            .trim()
+            .replace(/\\S/g, "<span>$&</span>")
+            .replace(/\\s/g, "<span>&nbsp;</span>");
+
+            let delay = 0.4;
+            document.querySelectorAll(".home-blog .hero div .description span").forEach((span, index) => {
+              delay += 0.1;
+              if (span.textContent.match(/^\\s*$/)) delay += 0.3;
+              span.style.setProperty("--delay", delay + "s");
+            });
+
+            description.addEventListener("animationend", (e) => {
+              if (e.target === document.querySelector(".home-blog .hero div .description span:last-child")) {
+                description.classList.add("ended");
+              }
+            });
+          }
+        }
+       `,
+    ],
     /* Google AdSense: https://www.google.cn/adsense/start/ */
     [
       'script',
       {
-        async: 'async',
+        async: true,
         src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4483317960568642',
         crossorigin: 'anonymous',
       },
@@ -220,16 +255,16 @@ module.exports = {
       {
         text: '主页',
         link: '/',
-        icon: 'reco-home',
+        icon: 'fa-solid fa-house',
       },
       {
         text: '时间轴',
         link: '/timeline/',
-        icon: 'reco-date',
+        icon: 'fa-solid fa-clock',
       },
       {
         text: '文档',
-        icon: 'reco-message',
+        icon: 'fa-solid fa-file-lines',
         items: [
           {
             text: 'Docs',
@@ -248,8 +283,18 @@ module.exports = {
         ],
       },
       {
+        text: '工具',
+        link: '/tools/',
+        icon: 'fa-solid fa-screwdriver-wrench',
+      },
+      {
+        text: '关于',
+        link: '/about/',
+        icon: 'fa-solid fa-address-card',
+      },
+      {
         text: '交流',
-        icon: 'reco-message',
+        icon: 'fa-solid fa-message',
         items: [
           {
             text: 'GitHub',
@@ -451,9 +496,9 @@ module.exports = {
       'meting',
       {
         meting: {
-          server: 'tencent',
+          server: 'netease',
           type: 'playlist',
-          mid: '8631789772',
+          mid: '3147691749',
         },
         // https://aplayer.js.org/#/zh-Hans/
         aplayer: {
@@ -463,6 +508,7 @@ module.exports = {
         },
         mobile: {
           cover: false,
+          lc: false,
         },
         defaultCover: '/images/avatar.png',
       },

@@ -1073,7 +1073,7 @@
     event-target-shim "^5.0.1"
     miniprogram-api-typings "^2.10.2"
 
-"@moefe/vue-aplayer@2.0.0-beta.5":
+"@moefe/vue-aplayer@^2.0.0-beta.5":
   version "2.0.0-beta.5"
   resolved "https://registry.npmmirror.com/@moefe/vue-aplayer/-/vue-aplayer-2.0.0-beta.5.tgz#f6bbd1802562e8e30ef9106192008a90bed2a354"
   integrity sha512-ytzp4GStzjftuh7H1rIS/ziqwV1FO67iTLSkDxgN0J2bqlO+rBgDDr83Y+pZKBIgRUc30uu/UZHqmE4QiBHHeg==
@@ -9421,12 +9421,12 @@ vuepress-plugin-mailchimp@^1.4.1:
     jsonp "^0.2.1"
     query-string "^6.9.0"
 
-vuepress-plugin-meting@^0.3.1:
-  version "0.3.2"
-  resolved "https://registry.npmmirror.com/vuepress-plugin-meting/-/vuepress-plugin-meting-0.3.2.tgz#381f21ae79828ba9a3475876c489565d1b2362b2"
-  integrity sha512-4GJNSBJx6suQ3o2jCj+VdkQIxN7L4opz6iH4syYJiqzpndR45iq8QFRRIJ3fLk4BUF6S3dQS7QS/1HywYJsVSg==
+vuepress-plugin-meting@0.2.3:
+  version "0.2.3"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-meting/-/vuepress-plugin-meting-0.2.3.tgz#4623124e7e712c936a59d084a143fb0dcb1b7db2"
+  integrity sha512-3WtCRlKqcB/cYcuFWT2odhnMlkyKK8ZVCeuBHGEWl6ncAEJwwtlgVN2BcwS3UBctDlhNsEefBMz5Ix2hrZpCUQ==
   dependencies:
-    "@moefe/vue-aplayer" "2.0.0-beta.5"
+    "@moefe/vue-aplayer" "^2.0.0-beta.5"
 
 vuepress-plugin-robots@^1.0.1:
   version "1.0.1"
