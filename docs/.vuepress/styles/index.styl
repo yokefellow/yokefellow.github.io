@@ -28,6 +28,35 @@ $Dodge-Rabbit-font = 'BY-Dodge-Rabbit-2.ttf'
         background-image linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)
         -webkit-background-clip text
         -webkit-text-fill-color transparent
+// 搜索框适应大小
+.links
+  .search-box
+    input
+      @media (max-width 1240px)
+        cursor pointer
+        width 0
+        border-color transparent
+        position relative
+        &:focus
+          width 10 rem
+      @media (max-width 959px)
+        &:focus
+          // margin-right 10px
+// site name 适应大小
+.navbar
+  .home-link
+    .site-name
+      @media (max-width 900px) and (min-width 720px)
+        display none
+// 设置navbar 后两个【交流】和【GitHub】显示时机
+@media (max-width 1060px) and (min-width 720px)
+  .navbar
+    .nav-links
+      .nav-item
+        &:first-child
+          display none
+      > a
+        display none
 // 修改深色主题背景
 html.dark
   .home-blog

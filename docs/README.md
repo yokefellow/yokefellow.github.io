@@ -1,5 +1,5 @@
 ---
 home: true
-bgImage: '/images/banner-green.jpg'
+bgImage: '/images/banner-autumn.jpg'
 bgImageStyle: { height: 'auto' }
 ---
