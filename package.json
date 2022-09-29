@@ -6,7 +6,7 @@
   "description": "The Source of Yokefellow Blog",
   "license": "MIT",
   "scripts": {
-    "dev": "vuepress dev docs",
+    "dev": "set NODE_ENV=development && vuepress dev docs",
     "build": "NODE_ENV=production vuepress build docs"
   },
   "devDependencies": {
@@ -22,6 +22,7 @@
     "vuepress-plugin-meting": "0.2.3",
     "vuepress-plugin-robots": "^1.0.1",
     "vuepress-plugin-sitemap": "^2.3.1",
+    "vuepress-plugin-social-share": "^1.2.1",
     "vuepress-theme-reco": "1.5.7"
   },
   "resolutions": {

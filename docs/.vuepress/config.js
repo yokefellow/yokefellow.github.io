@@ -1,3 +1,4 @@
+const path = require('path')
 module.exports = {
   title: 'Yokefellow',
   description: 'Talk is cheap. Show me the code. —— Linus Torvalds',
@@ -457,6 +458,31 @@ module.exports = {
       md.use(require('markdown-it-plantuml'))
     },
   },
+
+  // https://www.jianshu.com/p/27d82d98a041
+  // 修改vuepress内部的Webpack配置 https://juejin.cn/post/6850418120302493704
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@images': path.resolve(__dirname, './public/images'),
+      },
+    },
+  },
+  // https://cli.vuejs.org/zh/guide/webpack.html
+  // https://juejin.cn/post/6947851867422621733
+  chainWebpack: (config) => {
+    config.when(process.env.NODE_ENV.trim() === 'production', (config) => {
+      config.module
+        .rule('images')
+        .test(/\.(png|jpe?g|gif)$/)
+        .use('url-loader')
+        .options({
+          limit: 10000,
+          name: 'images/[name].[ext]',
+        })
+        .end()
+    })
+  },
   plugins: [
     [
       '@vuepress/pwa',
@@ -574,7 +600,7 @@ module.exports = {
       },
     ],
 
-    //https://www.npmjs.com/package/vuepress-plugin-code-copy
+    // https://www.npmjs.com/package/vuepress-plugin-code-copy
     [
       'vuepress-plugin-code-copy',
       {
@@ -583,6 +609,15 @@ module.exports = {
         backgroundColor: '#6666ff',
         successText: '复制成功',
         staticIcon: false,
+      },
+    ],
+    // https://sns.goyfe.com/guide/#usage
+    [
+      `social-share`,
+      {
+        networks: [`wechat`, 'qq', `weibo`, `douban`, `ememail`],
+        isPlain: true,
+        fallbackImage: '/images/avatar.png',
       },
     ],
   ],

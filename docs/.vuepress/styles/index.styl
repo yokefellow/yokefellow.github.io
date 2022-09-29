@@ -115,14 +115,17 @@ html.dark
             width 6px
         &.ended::after
           animation 1.1s cursor steps(2, jump-none) infinite
+          -webkit-animation 1.1s cursor steps(2, jump-none) infinite
         span
           --delay 10s
           display inline-block
           overflow hidden
           width 0ch
           animation 0.1s typing ease-in-out forwards
+          -webkit-animation 0.1s typing ease-in-out forwards
           animation-direction alternate
           animation-delay var(--delay)
+          -webkit-animation-delay var(--delay)
 @keyframes cursor
   from
     opacity 0
