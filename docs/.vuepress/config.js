@@ -597,7 +597,7 @@ module.exports = {
       'mermaidjs',
       {
         gantt: { barHeight: 40 },
-        theme: 'forest',
+        theme: 'dark',
       },
     ],
 
