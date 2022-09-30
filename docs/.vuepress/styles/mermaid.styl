@@ -1,0 +1,67 @@
+// 控制mermaid图再浅色、深色模式的色调
+// https://github.com/mermaid-js/mermaid/blob/8.14.0/src/themes/theme-dark.js
+html.dark
+  .mermaid-diagram
+    svg[id*='mermaid_']
+      // 流程图
+      .node
+        rect, circle, ellipse, polygon
+          fill #1f2020 !important
+          stroke #81B1DB !important
+        .label
+          color #ccc !important
+      // 时序图
+      .actor
+        stroke #81B1DB !important
+        fill #1f2020 !important
+      .note
+        stroke hsl(180, 0%, 18.3529411765%) !important
+        fill hsl(180, 1.5873015873%, 28.3529411765%) !important
+      .messageText
+        fill lightgrey !important
+        stroke lightgrey !important
+      line, path
+        stroke lightgrey !important
+      .labelBox
+        stroke #81B1DB !important
+        fill #1f2020 !important
+      .arrowheadPath
+        fill lightgrey !important
+      .edgeLabel .label span
+        background #1f2020 !important
+      // 类图
+      .entityBox
+        stroke #1f2020 !important
+        fill #81B1DB !important
+      .section
+        fill hsl(52.9411764706, 28.813559322%, 58.431372549%) !important
+      .relationshipLabelBox
+        fill hsl(78.1578947368, 58.4615384615%, 84.5098039216%)
+        opacity 0.7
+        background-color hsl(78.1578947368, 58.4615384615%, 84.5098039216%)
+      // 甘特图
+      .task
+        &.done0, &.done1, &.done2, &.done4
+          fill lightgrey !important
+          stroke grey !important
+        &.task0, &.task1, &.task2, &.task3
+          fill hsl(180, 1.5873015873%, 35.3529411765%)
+          stroke #ffffff !important
+        &.active0, &.active1, &.active2, &.active3
+          fill #81B1DB !important
+          stroke #ffffff !important
+      // 状态图
+      .xxx
+        fill red !important
+      // 旅程图
+      .journey-section
+        &.task-type-0, &.section-type-0
+          fill #1f2020 !important
+        &.task-type-1, &.section-type-1
+          fill hsl(180, 1.5873015873%, 28.3529411765%) !important
+      // E-R图
+      .xxx
+        fill red !important
+      // 饼图
+      .xxxx
+        fill red !important

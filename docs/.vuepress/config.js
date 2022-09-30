@@ -61,7 +61,6 @@ module.exports = {
       },
     ],
     // 设置Web应用程序状态栏的样式（default, black, and black-translucent）
-    //
     [
       'meta',
       {
@@ -70,7 +69,43 @@ module.exports = {
       },
     ],
 
-    // 设置iOS设备添加到主屏幕上的图标
+    //浏览器分享 https://juejin.cn/post/6977635841262747662
+    [
+      'meta',
+      {
+        property: 'og:type',
+        content: 'website',
+      },
+    ],
+    [
+      'meta',
+      {
+        property: 'og:title',
+        content: 'Yokefellow',
+      },
+    ],
+    [
+      'meta',
+      {
+        property: 'og:description',
+        content: 'Talk is cheap. Show me the code. —— Linus Torvalds',
+      },
+    ],
+    [
+      'meta',
+      {
+        property: 'og:image',
+        content: 'https://yokefellow.cn/images/avatar.png',
+      },
+    ],
+    [
+      'meta',
+      {
+        property: 'og:url',
+        content: 'https://yokefellow.cn/',
+      },
+    ],
+
     [
       'link',
       {
@@ -157,7 +192,7 @@ module.exports = {
       'link',
       {
         rel: 'stylesheet',
-        href: 'https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css',
       },
     ],
 
@@ -452,8 +487,8 @@ module.exports = {
     lineNumbers: true,
     extendMarkdown: (md) => {
       // 使用更多的 markdown-it 插件!
-      // https://github.com/iktakahiro/markdown-it-katex
-      md.use(require('@iktakahiro/markdown-it-katex'))
+      // https://www.npmjs.com/package/markdown-it-katex
+      md.use(require('markdown-it-katex'))
       // https://github.com/gmunguia/markdown-it-plantuml
       md.use(require('markdown-it-plantuml'))
     },
@@ -517,6 +552,8 @@ module.exports = {
       },
     ],
 
+    // https://www.npmjs.com/package/vuepress-plugin-reading-progress
+    ['reading-progress', {}],
     // https://github.com/moefyit/vuepress-plugin-meting
     [
       'meting',
@@ -552,6 +589,17 @@ module.exports = {
     ],
     // https://github.com/ulivz/vuepress-plugin-flowchart
     'flowchart',
+
+    // https://vuepress-plugin-mermaidjs.efrane.com/
+    // https://mermaid-js.github.io/mermaid/#/Setup?id=configuration
+    // https://mermaidjs.github.io/mermaid-live-editor/
+    [
+      'mermaidjs',
+      {
+        gantt: { barHeight: 40 },
+        theme: 'forest',
+      },
+    ],
 
     // https://github.com/ekoeryanto/vuepress-plugin-sitemap
     [
