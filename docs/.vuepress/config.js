@@ -664,7 +664,10 @@ module.exports = {
         lineNumbers: false,
         imageFix: false,
         mermaid: true,
+        // https://bit_root.gitbooks.io/chartjs-zh/content/
         chart: true,
+        // https://echarts.apache.org/handbook/zh/get-started
+        // https://echarts.apache.org/examples/zh/index.html
         echarts: true,
       },
     ],

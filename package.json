@@ -22,7 +22,7 @@
     "vuepress-plugin-copyright": "^1.0.2",
     "vuepress-plugin-dynamic-title": "^1.0.0",
     "vuepress-plugin-flowchart": "^1.5.0",
-    "vuepress-plugin-md-enhance": "^1.30.0",
+    "vuepress-plugin-md-enhance": "1.31.0-beta.2",
     "vuepress-plugin-mermaidjs": "^1.9.1",
     "vuepress-plugin-meting": "0.2.3",
     "vuepress-plugin-reading-progress": "^1.0.10",

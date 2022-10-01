@@ -163,17 +163,16 @@ section Go home
 
 ### Git
 
-```mermaid
-gitGraph
-  commit
-  commit
-  branch develop
-  commit
-  commit
-  commit
-  checkout main
-  commit
-  commit
+```git-graph
+commit
+commit
+branch develop
+commit
+commit
+commit
+checkout main
+commit
+commit
 ```
 
 ### 状态图
