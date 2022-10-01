@@ -45,39 +45,38 @@ func main() {
 
 ```
 
-## CodePen
-
-<iframe height="400" style="width: 100%;" scrolling="no" title="【CSS：行为】使用:hover和attr()定制悬浮提示" src="https://codepen.io/xugaoyi/embed/vYNKNaq?height=400&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
-  See the Pen <a href='https://codepen.io/xugaoyi/pen/vYNKNaq'>【CSS：行为】使用:hover和attr()定制悬浮提示</a> by xugaoyi
-  (<a href='https://codepen.io/xugaoyi'>@xugaoyi</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
-
 ## Mermaid
 
 ### 流程图
 
 ```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+flowchart TB
+    c1-->a2
+    subgraph one
+    a1-->a2
+    end
+    subgraph two
+    b1-->b2
+    end
+    subgraph three
+    c1-->c2
+    end
+    one --> two
+    three --> two
+    two --> c2
 ```
 
 ### 时序图
 
-```mermaid
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->>John: Hello John, how are you?
-    loop Healthcheck
-        John->>John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts <br/>prevail!
-    John-->>Alice: Great!
-    John->>Bob: How about you?
-    Bob-->>John: Jolly good!
+```sequence
+Alice ->> Bob: Hello Bob, how are you?
+Bob-->>John: How about you John?
+Bob--x Alice: I am good thanks!
+Bob-x John: I am good thanks!
+Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
+
+Bob-->Alice: Checking with John...
+Alice->John: Yes... John, how are you?
 ```
 
 ### 甘特图
@@ -85,20 +84,38 @@ sequenceDiagram
 ```mermaid
 gantt
 dateFormat  YYYY-MM-DD
-title Adding GANTT diagram to mermaid
-excludes weekdays 2014-01-10
+title       Adding GANTT diagram functionality to mermaid
+excludes    weekends
+%% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week ("sunday") or "weekends", but not the word "weekdays".)
 
 section A section
 Completed task            :done,    des1, 2014-01-06,2014-01-08
 Active task               :active,  des2, 2014-01-09, 3d
 Future task               :         des3, after des2, 5d
-Future task2               :         des4, after des3, 5d
+Future task2              :         des4, after des3, 5d
+
+section Critical tasks
+Completed task in the critical line :crit, done, 2014-01-06,24h
+Implement parser and jison          :crit, done, after des1, 2d
+Create tests for parser             :crit, active, 3d
+Future task in critical line        :crit, 5d
+Create tests for renderer           :2d
+Add to mermaid                      :1d
+
+section Documentation
+Describe gantt syntax               :active, a1, after des1, 3d
+Add gantt diagram to demo page      :after a1  , 20h
+Add another diagram to demo page    :doc1, after a1  , 48h
+
+section Last section
+Describe gantt syntax               :after doc1, 3d
+Add gantt diagram to demo page      :20h
+Add another diagram to demo page    :48h
 ```
 
 ### 类图
 
-```mermaid
-classDiagram
+```class
 Class01 <|-- AveryLongClass : Cool
 Class03 *-- Class04
 Class05 o-- Class06
@@ -116,84 +133,74 @@ Class08 <--> C2: Cool label
 
 ### E-R 图
 
-```mermaid
-erDiagram
-  CUSTOMER ||--o{ ORDER : places
-  ORDER ||--|{ LINE-ITEM : contains
-  CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+```er
+CAR ||--o{ NAMED-DRIVER : allows
+CAR {
+    string registrationNumber
+    string make
+    string model
+}
+PERSON ||--o{ NAMED-DRIVER : is
+PERSON {
+    string firstName
+    string lastName
+    int age
+}
 ```
 
 ### 用户旅程图
 
-```mermaid
-journey
-    title My working day
-    section Go to work
-      Make tea: 5: Me
-      Go upstairs: 3: Me
-      Do work: 1: Me, Cat
-    section Go home
-      Go downstairs: 5: Me
-      Sit down: 5: Me
+```journey
+title My working day2
+section Go to work
+  Make tea: 5: Me
+  Go upstairs: 3: Me
+  Do work: 1: Me, Cat
+section Go home
+  Go downstairs: 5: Me
+  Sit down: 5: Me
 ```
 
 ### Git
 
-<!-- ```mermaid
+```mermaid
 gitGraph
-    commit
-    commit
-    branch develop
-    commit
-    commit
-    commit
-    checkout main
-    commit
-    commit
-``` -->
+  commit
+  commit
+  branch develop
+  commit
+  commit
+  commit
+  checkout main
+  commit
+  commit
+```
 
 ### 状态图
 
-```mermaid
-stateDiagram
-    [*] --> Still
-    Still --> [*]
-    Still --> Moving
-    Moving --> Still
-    Moving --> Crash
-    Crash --> [*]
+```state
+[*] --> Active
 
-```
-
-```mermaid
-stateDiagram
-	state Active {
-		state one {
-			[*] --> state1
-			state1 --> state2
-			state2 --> state1
-			--
-			[*] --> state3
-			state3 --> state4
-			state4 --> state3
-		}
-		state two {
-			[*] --> state1
-			state1 --> state2
-			state2 --> state1
-			--
-			[*] --> state3
-			state3 --> state4
-			state4 --> state3
-		}
-	}
+state Active {
+    [*] --> NumLockOff
+    NumLockOff --> NumLockOn : EvNumLockPressed
+    NumLockOn --> NumLockOff : EvNumLockPressed
+    --
+    [*] --> CapsLockOff
+    CapsLockOff --> CapsLockOn : EvCapsLockPressed
+    CapsLockOn --> CapsLockOff : EvCapsLockPressed
+    --
+    [*] --> ScrollLockOff
+    ScrollLockOff --> ScrollLockOn : EvScrollLockPressed
+    ScrollLockOn --> ScrollLockOff : EvScrollLockPressed
+}
 ```
 
 ### 饼图
 
-```mermaid
-pie title Pets adopted by volunteers
-  "Dogs" : 386
-  "Cats" : 85
-  "Rats" : 15
+```pie
+title What Voldemort doesn’t have?
+  "FRIENDS" : 2
+  "FAMILY" : 3
+  "NOSE" : 45
 ```

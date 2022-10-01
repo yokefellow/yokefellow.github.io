@@ -593,13 +593,13 @@ module.exports = {
     // https://vuepress-plugin-mermaidjs.efrane.com/
     // https://mermaid-js.github.io/mermaid/#/Setup?id=configuration
     // https://mermaidjs.github.io/mermaid-live-editor/
-    [
-      'mermaidjs',
-      {
-        gantt: { barHeight: 40 },
-        theme: 'dark',
-      },
-    ],
+    // [
+    //   'mermaidjs',
+    //   {
+    //     gantt: { barHeight: 40 },
+    //     theme: 'forest',
+    //   },
+    // ],
 
     // https://github.com/ekoeryanto/vuepress-plugin-sitemap
     [
@@ -648,17 +648,35 @@ module.exports = {
       },
     ],
 
-    // https://www.npmjs.com/package/vuepress-plugin-code-copy
+    // https://www.npmjs.com/package/@mr-hope/vuepress-plugin-copy-code
     [
-      'vuepress-plugin-code-copy',
+      '@mr-hope/vuepress-plugin-copy-code',
       {
-        color: '#6666ff',
-        backgroundTransition: true,
-        backgroundColor: '#6666ff',
-        successText: '复制成功',
-        staticIcon: false,
+        selector: '.theme-reco-content div[class*="language-"] pre',
+        showInMobile: true,
       },
     ],
+
+    // https://vuepress-theme-hope.github.io/v1/md-enhance/zh/guide/
+    [
+      'md-enhance',
+      {
+        lineNumbers: false,
+        imageFix: false,
+        mermaid: true,
+        chart: true,
+        echarts: true,
+      },
+    ],
+    // https://www.npmjs.com/package/vuepress-plugin-copyright
+    [
+      'copyright',
+      {
+        minLength: 50,
+        authorName: 'Yokefellow',
+      },
+    ],
+
     // https://sns.goyfe.com/guide/#usage
     [
       `social-share`,

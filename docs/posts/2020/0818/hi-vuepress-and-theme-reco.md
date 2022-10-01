@@ -6,7 +6,7 @@ tags:
   - Vue.js
   - Markdown
 categories:
-  - FrontEnd
+  - 前端
 sticky: 1
 author: Hascalator
 ---
