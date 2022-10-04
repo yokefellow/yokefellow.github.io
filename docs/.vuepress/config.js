@@ -644,27 +644,6 @@ module.exports = {
         hm: process.env.BaiduAnalyticsID,
       },
     ],
-    [
-      // https://www.npmjs.com/package/vuepress-plugin-robots
-      'robots',
-      {
-        host: 'https://yokefellow.cn',
-
-        disallowAll: false,
-
-        allowAll: true,
-
-        sitemap: '/sitemap.xml',
-
-        policies: [
-          {
-            userAgent: '*',
-            disallow: [],
-            allow: [],
-          },
-        ],
-      },
-    ],
 
     // https://www.npmjs.com/package/@mr-hope/vuepress-plugin-copy-code
     [
