@@ -1,9 +1,6 @@
 <template>
   <v-card class="mx-auto" max-width="344">
-    <v-img
-      src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-      height="200px"
-    ></v-img>
+    <v-img :src="img" height="200px"></v-img>
 
     <v-card-title> Top western road trips </v-card-title>
 
@@ -39,22 +36,16 @@
 export default {
   name: 'VuetifyDemo',
   data: () => ({
+    img: 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg',
     show: false,
   }),
 }
 </script>
 
-<style  src="vuetify/dist/vuetify.min.css">
+<style scoped src="vuetify/dist/vuetify.min.css">
 </style>
 
 <style lang="stylus" scoped>
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900')
 @import url('https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css')
-::v-deep .v-image__image
-  // z-index -1
-  // position absolute
-  // top 0
-  // left 0
-  // width 100%
-  // height 100%
 </style>
