@@ -2,7 +2,8 @@
     "cSpell.words": [
         "Hascalator",
         "Reco",
-        "VSSUE"
+        "VSSUE",
+        "Vuetify"
     ],
     // 解决VSCode中使用vetur插件格式化vue文件时（或者保存自动格式化时），stylus代码会自动加上大括号、冒号和分号
     "stylusSupremacy.insertColons": false, // 是否插入冒号

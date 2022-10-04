@@ -1,4 +1,5 @@
 const path = require('path')
+const filterRules = require('postcss-filter-rules')
 module.exports = {
   title: 'Yokefellow',
   description: 'Talk is cheap. Show me the code. —— Linus Torvalds',
@@ -517,6 +518,22 @@ module.exports = {
         })
         .end()
     })
+  },
+  postcss: {
+    plugins: [
+      // https://www.codenong.com/54293336/
+      // filterRules({
+      //   filter: (selector) => {
+      //     const regex = new RegExp(
+      //       /^(html|body|\\*|ul|ol|select|small)(\\W|$)/,
+      //       'i'
+      //     )
+      //     return !regex.test(selector)
+      //   },
+      //   keepAtRules: true,
+      // }),
+      require('autoprefixer'),
+    ],
   },
   plugins: [
     [

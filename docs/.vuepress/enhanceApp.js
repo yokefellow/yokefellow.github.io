@@ -1,3 +1,5 @@
+import Vuetify from 'vuetify'
+//import 'vuetify/dist/vuetify.min.css'
 export default ({ Vue, options, router, siteData, isServer }) => {
   // https://github.com/vuejs/vue-router/issues/2881
   const originalPush = router.push
@@ -8,11 +10,12 @@ export default ({ Vue, options, router, siteData, isServer }) => {
       err
     })
   }
-  // https://github.com/vuejs/vuepress/pull/2639
-  // https://segmentfault.com/a/1190000041346307
-  // https://github.com/vuepress-reco/vuepress-theme-reco-1.x/commit/685e92d5af462839368100624af28a753ca7c994
-  // https://juejin.cn/post/6894571293337878536
+
   Vue.mixin({
+    // https://github.com/vuejs/vuepress/pull/2639
+    // https://segmentfault.com/a/1190000041346307
+    // https://github.com/vuepress-reco/vuepress-theme-reco-1.x/commit/685e92d5af462839368100624af28a753ca7c994
+    // https://juejin.cn/post/6894571293337878536
     mounted() {
       router.onReady(() => {
         const { hash } = document.location
@@ -28,4 +31,6 @@ export default ({ Vue, options, router, siteData, isServer }) => {
       })
     },
   })
+  Vue.use(Vuetify)
+  options.vuetify = new Vuetify()
 }
