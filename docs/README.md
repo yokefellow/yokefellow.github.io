@@ -1,5 +1,5 @@
 ---
 home: true
-bgImage: 'https://tva1.sinaimg.cn/large/006TyckUly1h6qyxfl53jj318g0p07gj.jpg'
+bgImage: 'https://cdn.yokefellow.cn/images/banner-autumn.jpg'
 bgImageStyle: { height: 'auto' }
 ---

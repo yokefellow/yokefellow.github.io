@@ -1,5 +1,6 @@
 const path = require('path')
 const filterRules = require('postcss-filter-rules')
+const CDN_URL = 'https://cdn.yokefellow.cn'
 module.exports = {
   title: 'Yokefellow',
   description: 'Talk is cheap. Show me the code. —— Linus Torvalds',
@@ -96,7 +97,7 @@ module.exports = {
       'meta',
       {
         property: 'og:image',
-        content: 'https://yokefellow.cn/images/avatar.png',
+        content: CDN_URL + '/images/avatar.png',
       },
     ],
     [
@@ -443,8 +444,8 @@ module.exports = {
       },
     },
     author: 'Yokefellow🎓',
-    authorAvatar: '/images/avatar.png',
-    logo: '/images/avatar.png',
+    authorAvatar: CDN_URL + '/images/avatar.png',
+    logo: CDN_URL + '/images/avatar.png',
 
     search: true,
     searchMaxSuggestions: 10,
@@ -590,7 +591,7 @@ module.exports = {
           cover: false,
           lc: false,
         },
-        defaultCover: '/images/avatar.png',
+        defaultCover: CDN_URL + '/images/avatar.png',
       },
     ],
 
@@ -703,7 +704,7 @@ module.exports = {
       {
         networks: [`wechat`, 'qq', `weibo`, `douban`, `ememail`],
         isPlain: true,
-        fallbackImage: '/images/avatar.png',
+        fallbackImage: CDN_URL + '/images/avatar.png',
       },
     ],
   ],
