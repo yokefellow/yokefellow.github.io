@@ -1,4 +1,3 @@
 User-agent: *
 Disallow:
-Sitemap: https:/yokefellow.cn/sitemap.xml
-Host: https://yokefellow.cn
+Sitemap: https://yokefellow.cn/sitemap.xml
